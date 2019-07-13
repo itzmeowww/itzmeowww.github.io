@@ -31,3 +31,17 @@ h1{
   color: black;
 
 }
+.h_con{
+	position:relative;
+	text-align:center;
+	
+}
+.midd{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+.bgsf{
+	font-family:BloggerSans;
+}
