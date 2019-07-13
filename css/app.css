@@ -1,7 +1,17 @@
-
+@font-face{font-family:BloggerSans; src:url('Blogger_Sans.otf');}
+body{
+	background-color:#ffcece;
+}
+h1{
+	color:#8ed6ff;
+	font-family:BloggerSans;
+	font-size:100px;
+}
 .countup {
   text-align: center;
   margin-bottom: 20px;
+  font-family:BloggerSans;
+  font-size:25px;
 }
 .countup .timeel {
   display: inline-block;
@@ -9,13 +19,15 @@
   background: #151515;
   margin: 0;
   color: white;
-  min-width: 2.6rem;
+  min-width: 2rem;
   margin-left: 13px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 20px 0 0 20px;
+ 
 }
 .countup span[class*="timeRef"] {
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 20px 20px 0;
   margin-left: 0;
-  background: #e8c152;
+  background: #ffe3b0;
   color: black;
+
 }
