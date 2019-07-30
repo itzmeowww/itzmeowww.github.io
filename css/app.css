@@ -1,6 +1,41 @@
 @font-face{font-family:BloggerSans; src:url('Blogger_Sans.otf');}
+
+ul 
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8ed6ff;
+}
+li 
+{
+  float: left;
+}
+li a 
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: BloggerSans;
+}
+
+li a:hover 
+{
+  background-color: #aed6ff;
+}
+.footer
+{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
 body{
-	background-color:#ffcece;
+  background-color:#ffcece;
+  margin: 0;
 }
 h1{
 	color:white;
