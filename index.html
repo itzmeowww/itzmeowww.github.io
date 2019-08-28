@@ -8,32 +8,73 @@
 
 
 	<h1 align="middle" id = "home">#FFCECE</h1>
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/progressbar.css">
+	<div class="countup center" id="countup1">
+		<table class="tcountup center">
+			<tr class = "up">
+				<td class = "days">
+					00
+				</td>
 
-	<div class="countup" id="countup1">
-	  <span class="timeel days">00</span>
-	  <span class="timeel timeRefDays">D</span>
-	  <span class="timeel hours">00</span>
-	  <span class="timeel timeRefHours">H</span>
-	  <span class="timeel minutes">00</span>
-	  <span class="timeel timeRefMinutes">M</span>
-	  <span class="timeel seconds">00</span>
-	  <span class="timeel timeRefSeconds">S</span>
-	  
-	  <link rel="stylesheet" href="css/app.css">
+				<td class = "hours">
+					00
+				</td>
+
+				<td class = "minutes">
+					00
+				</td>
+
+				<td class = "seconds">
+					00
+				</td>
+
+			</tr>
+			<tr clss= "down">
+					<td class = "refdays">
+						D
+					</td>
+	
+					<td class = "refhours">
+						H
+					</td>
+	
+					<td class = "refminutes">
+						M
+					</td>
+	
+					<td class = "refseconds">
+						S
+					</td>
+	
+				</tr>
+		</table>		
 	</div>
+
 	</br>
-	<div align="middle" class = "h_con">
-		<img src="pics/like2.png" width = "50px" height = "50px" onclick="love()" id="love" >
+	</br>
+
+	<div align="middle" class = "h_con" id="heart">
+		<img src="pics/like2.png" width = "50px" height = "50px" onclick="love(0)" id="love">
 		<div class="midd bgsf" id="nub">0</div>
 	</div>
 	</br>
-	<div align = "middle" id="heart1">
+	<div>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+	</div>
+</br>
+
+	<div align = "middle">
 		<img id="bbt" onclick="bigger()" src="pics/bbt.jpg" width = "500px" height = "500px" >
 	</div>
 	<div >
 	</div>
 	<script src="javascript/app.js"></script>
 	<script src="javascript/app2.js"></script>
+	<script src="javascript/countup.js"></script>
+	<script src="javascript/progressbar.js"></script>
 	
 	</body>
 	</br>

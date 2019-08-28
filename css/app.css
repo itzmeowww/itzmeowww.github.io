@@ -48,24 +48,28 @@ h1{
   font-family:BloggerSans;
   font-size:25px;
 }
-.countup .timeel {
-  display: inline-block;
-  padding: 10px;
-  background: #151515;
-  margin: 0;
-  color: white;
-  min-width: 2rem;
-  margin-left: 13px;
-  border-radius: 20px 0 0 20px;
- 
-}
-.countup span[class*="timeRef"] {
-  border-radius: 0 20px 20px 0;
-  margin-left: 0;
-  background: #ffe3b0;
-  color: black;
 
+.center{
+  margin: auto;
 }
+
+.countup td {
+  padding: 15px;
+  text-align: center;
+}
+
+.countup tr {
+  padding: 20px;
+  text-align: center;
+}
+
+
+.countup table {
+  border: 3px solid black;
+  border-radius: 25px;
+}
+
+
 .h_con{
 	position:relative;
 	text-align:center;
