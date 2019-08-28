@@ -18,16 +18,24 @@ function countUpFromDate(date,id){
     counter.getElementsByClassName('hours')[0].innerHTML = hours;
     counter.getElementsByClassName('minutes')[0].innerHTML = mins;
     counter.getElementsByClassName('seconds')[0].innerHTML = secs;
-
+    
     var to = new Date("Jun 20, 2020 0:0:00").getTime();
     var bar = document.getElementById("myBar");   
     var dtime2 = to - now;
     //console.log(dtime2);
-    var width = (1 - (dtime2/25621604792)*100);
-    //console.log(width);
+    var width = ((25589108102- Number(dtime2))/25589108102)*100;
+    console.log(width);
     bar.style.width = width + '%'; 
     
-
+    /*
+   var to = new Date("Aug 28, 2019 20:0:00").getTime();
+   var bar = document.getElementById("myBar");   
+   var dtime2 = to - now;
+   console.log(dtime2);
+   var width = ((189822- Number(dtime2))/189822)*100;
+   console.log(width);
+   bar.style.width = width + '%';
+*/
     clearTimeout(countUpFromDate.interval);
     countUpFromDate.interval = setTimeout(function(){ countUpFromDate(date, id); }, 1000);
 }
