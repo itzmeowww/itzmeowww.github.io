@@ -16,8 +16,8 @@ function love(add){
 	heart.height = 50 + likes/22;
 	var updates = {};
 	updates['love'] = likes;
-	console.log(likes)
-	console.log(updates);
+	//console.log(likes)
+	//console.log(updates);
 	return firebase.database().ref().update(updates);
 }
 function m_over_love(){
