@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+	
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+	<script src="javascript/app2.js"></script>
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyAh6_jWRi5sM87CLQG62yFN6HgdG35-iSQ",
+		authDomain: "itzmeo-github-io.firebaseapp.com",
+		databaseURL: "https://itzmeo-github-io.firebaseio.com",
+		projectId: "itzmeo-github-io",
+		storageBucket: "itzmeo-github-io.appspot.com",
+		messagingSenderId: "670423305836",
+		appId: "1:670423305836:web:1ad3ee041a3660765e9249",
+		measurementId: "G-8MVVWVBVNR"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	// Get a reference to the database service
+	var database = firebase.database();
+	var Ref = firebase.database().ref();
+	Ref.once('value', function(snapshot) {
+		//console.log(snapshot.val());
+		love(snapshot.val().love-1);
+	});
+	
+	</script>
+
 	<body>
 			<ul>
 				<li><a href="#home">Home</a></li>
 				<li><a href="pages/aboutme.html">About</a></li>
 			</ul>
-
 
 	<h1 align="middle" id = "home">#FFCECE</h1>
 	<link rel="stylesheet" href="css/app.css">
@@ -78,11 +110,14 @@
 	</div>
 	<div >
 	</div>
+	
 	<script src="javascript/app.js"></script>
-	<script src="javascript/app2.js"></script>
+	
 	<script src="javascript/countup.js"></script>
 	<script src="javascript/progressbar.js"></script>
-	
+
+
+
 	</body>
 	</br>
 	</br>

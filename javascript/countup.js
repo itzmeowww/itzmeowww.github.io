@@ -24,7 +24,7 @@ function countUpFromDate(date,id){
     var dtime2 = to - now;
     //console.log(dtime2);
     var width = ((25589108102- Number(dtime2))/25589108102)*100;
-    console.log(width);
+    //console.log(width);
     bar.style.width = width + '%'; 
     
     /*
