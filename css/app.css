@@ -1,95 +1,95 @@
-@font-face{font-family:BloggerSans; src:url('Blogger_Sans.otf');}
-
-ul 
-{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #8ed6ff;
-}
-li 
-{
-  float: left;
-}
-li a 
-{
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-family: BloggerSans;
+@font-face {
+    font-family: BloggerSans;
+    src: url('bloggersan/Blogger_Sans.otf');
 }
 
-li a:hover 
-{
-  background-color: #aed6ff;
-}
-.footer
-{
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-body{
-  background-color:#ffcece;
-  margin: 0;
-}
-h1{
-	color:white;
-	font-family:BloggerSans;
-	font-size:100px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #8ed6ff;
 }
 
+li {
+    float: left;
+}
 
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: BloggerSans;
+}
+
+li a:hover {
+    background-color: #aed6ff;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    background-color: #ffcece;
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    font-family: BloggerSans;
+    font-size: 100px;
+}
 
 .countup {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family:BloggerSans;
-  font-size:25px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: BloggerSans;
+    font-size: 25px;
 }
 
-.center{
-  margin: auto;
+.center {
+    margin: auto;
 }
 
 .countup td {
-  padding: 15px;
-  text-align: center;
+    padding: 15px;
+    text-align: center;
 }
 
 .countup tr {
-  padding: 20px;
-  text-align: center;
+    padding: 20px;
+    text-align: center;
 }
-
 
 .countup table {
-  border: 3px solid black;
-  border-radius: 25px;
+    border: 3px solid black;
+    border-radius: 25px;
 }
 
+.h_con {
+    position: relative;
+    text-align: center;
+}
 
-.h_con{
-	position:relative;
-	text-align:center;
-	
+.midd {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.midd{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform:translate(-50%,-50%);
-}
-.bgsf{
-	font-family:BloggerSans;
+
+.bgsf {
+    font-family: BloggerSans;
 }
 
 .text1 {
-    margin : 0 auto;
+    margin: 0 auto;
     height: 200px;
     width: 50%;
     text-align: center;

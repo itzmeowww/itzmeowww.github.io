@@ -1,11 +1,2 @@
-@font-face{font-family:BloggerSans; src:url('Blogger_Sans.otf');}
-body{
-  background-color:#ffcece;
-  margin: 0;
-}
+@font-face{font-family:BloggerSans; src:url('bloggersan/Blogger_Sans.otf');}
 
-h1{
-	font-family:BloggerSans;
-	color:white;
-	
-}
