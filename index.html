@@ -1,146 +1,94 @@
 <!DOCTYPE html>
 <html>
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-	
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-		https://firebase.google.com/docs/web/setup#available-libraries -->
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-	<script src="javascript/app2.js"></script>
-	<script>
-	// Your web app's Firebase configuration
-	var firebaseConfig = {
-		apiKey: "AIzaSyAh6_jWRi5sM87CLQG62yFN6HgdG35-iSQ",
-		authDomain: "itzmeo-github-io.firebaseapp.com",
-		databaseURL: "https://itzmeo-github-io.firebaseio.com",
-		projectId: "itzmeo-github-io",
-		storageBucket: "itzmeo-github-io.appspot.com",
-		messagingSenderId: "670423305836",
-		appId: "1:670423305836:web:1ad3ee041a3660765e9249",
-		measurementId: "G-8MVVWVBVNR"
-	};
-	// Initialize Firebase
-	firebase.initializeApp(firebaseConfig);
-	firebase.analytics();
-	// Get a reference to the database service
-	var database = firebase.database();
-	var Ref = firebase.database().ref();
-	Ref.once('value', function(snapshot) {
-		//console.log(snapshot.val());
-		love(snapshot.val().love-1);
-	});
-	
-	</script>
 
-	<body>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="pages/aboutme.html">About</a></li>
-			</ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Website of Thanasan Kumdee">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Thanasan Kumdee, website">
+  <meta name="author" content="Thanasan Kumdee">
 
-	<h1 align="middle" id = "home">#FFCECE</h1>
-	<link rel="stylesheet" href="css/app.css">
-	<link rel="stylesheet" href="css/progressbar.css">
-	<div class="countup center" id="countup1">
-		<table class="tcountup center">
-			<tr class = "up">
-				<td class = "days">
-					00
-				</td>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-				<td class = "hours">
-					00
-				</td>
+  <title>
+    ItzMeOwww!
+  </title>
 
-				<td class = "minutes">
-					00
-				</td>
-
-				<td class = "seconds">
-					00
-				</td>
-
-			</tr>
-			<tr clss= "down">
-					<td class = "refdays">
-						D
-					</td>
-	
-					<td class = "refhours">
-						H
-					</td>
-	
-					<td class = "refminutes">
-						M
-					</td>
-	
-					<td class = "refseconds">
-						S
-					</td>
-	
-				</tr>
-		</table>		
-	</div>
-
-	</br>
-	</br>
-
-	<div align="middle" class = "h_con" id="heart">
-		<img src="pics/like2.png" width = "50px" height = "50px" onclick="love(0)" id="love">
-		<div class="midd bgsf" id="nub">0</div>
-	</div>
-	</br>
-	<div>
-		<div id="myProgress">
-			<div id="myBar"></div>
-		</div>
-	</div>
-</br>
-</br>
-</br>
-</br>
-
-<div height="500px" class ="text1">
-<h3 class="bgsf" id="text1_1">At least we're under the same sky.</h3>
-</div>
-
-	<div align = "middle">
-		<img id="bbt" onclick="bigger()" src="pics/bbt.jpg" width = "500px" height = "500px" >
-	</div>
-	<div >
-	</div>
-	
-	<script src="javascript/app.js"></script>
-	
-	<script src="javascript/countup.js"></script>
-	<script src="javascript/progressbar.js"></script>
+<body class="" style="background-image: url('pics/cloud01.jpg'); background-repeat: no-repeat;
+background-attachment: fixed;background-size: 100%;">
 
 
 
-	</body>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	<div class="footer">
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="pages/aboutme.html">About</a></li>
-			</ul>
-	</div>
+  <script>
+    
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+
+    });
+
+
+  </script>
+
+
+  <div class="container-fluid w-75 text-center h-100">
+    </br>
+    </br>
+    <row>
+      <h3>
+        Hello!
+      </h3>
+    </row>
+    </br>
+    </br>
+  </div>
+
+  
+
+  <div class="container-fluid w-75 ">
+
+    <div class="row justify-content-center d-flex align-items-center">
+
+      <div class="col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+
+          <img class="card-img-top w-75 h-75 mx-auto" src="pics/bbt.jpg" alt="boba tea">
+          <div class="card-body bg-light">
+            <h5 class="card-title">My Lovely Boba Milk Tea</h5>
+            <p class="card-text"> </p>
+            <a href="pages/temp.html" class="btn btn-primary" data-toggle="tooltip" title="Click me!">Little Button</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="card h-100 text-center shadow-sm">
+          <img class="card-img-top w-75 h-75 mx-auto" src="pics/me.jpg" alt="boba tea">
+          <div class="card-body bg-light">
+            <h5 class="card-title">Portfolio</h5>
+            <p class="card-text"></p>
+            <a href="pages/portfolio.html" class="btn btn-primary" data-toggle="tooltip" title="Click me!">Portfolio</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+</body>
+</head>
 
 </html>
