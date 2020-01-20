@@ -17,69 +17,33 @@
     <title>
         ItzMeOwww!
     </title>
+    <div class="container-fluid w-75 text-center h-100">
+        </br>
+        </br>
+        <row>
+            <h3>
+                Redirecting. . .
+            </h3>
+            </br>
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+
+        </row>
+        </br>
+    </div>
+    <script>
+        var timer = setTimeout(function() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location = 'pages/m_index.html';
+            } else {
+                window.location = 'pages/c_index.html';
+            }
+        }, 3000);
+    </script>
 
     <body class="">
-
-
-
-        <script>
-            $(document).ready(function() {
-                $('[data-toggle="tooltip"]').tooltip();
-
-            });
-        </script>
-
-
-        <div class="container-fluid w-75 text-center h-100">
-            </br>
-            </br>
-            <row>
-                <h3>
-                    Hello!
-                </h3>
-            </row>
-
-            </br>
-        </div>
-
-
-
-        <div class="container-fluid w-75">
-
-            <div class="row justify-content-center d-flex align-items-center ">
-
-                <div class="col-md-6">
-                    <div class="card h-100 text-center shadow-sm">
-                        </br>
-                        </br>
-                        <img class="card-img-top w-75 h-75 mx-auto" src="pics/bbt.jpg" alt="boba tea">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">My Lovely Boba Milk Tea</h5>
-                            <p class="card-text"> </p>
-                            <a href="pages/temp.html" class="btn btn-primary" data-toggle="tooltip" title="Click me!">Little Button</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100 text-center shadow-sm">
-                        </br>
-                        </br>
-                        <img class="card-img-top w-75 h-75 mx-auto" src="pics/me.jpg" alt="boba tea">
-                        <div class="card-body bg-light">
-                            <h5 class="card-title">Portfolio</h5>
-                            <p class="card-text"></p>
-                            <a href="pages/portfolio.html" class="btn btn-primary" data-toggle="tooltip" title="Click me!">Portfolio</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
     </body>
 </head>
 
