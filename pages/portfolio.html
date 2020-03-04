@@ -9,7 +9,7 @@
     <meta name="author" content="Thanasan Kumdee">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/portfolio.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
 
     <title>
         Thanasan Kumdee's Portfolio
@@ -26,72 +26,40 @@
           </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ">
-                <a class="nav-item nav-link" href="#me">Me</a>
-                <a class="nav-item nav-link" href="#">Activities</a>
+                <a data-scroll class="nav-item nav-link" href="#me">Me</a>
+                <a class="nav-item nav-link" href="#activities">Activities</a>
+
             </div>
         </div>
     </nav>
 
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+    <div style="height: 700px;"></div>
     <div class="container-fluid w-75 text-center h-100" id="me">
         </br>
         </br>
         </br>
         <row>
             <h3>
-                Hello!
+                This is me!
             </h3>
         </row>
 
         </br>
     </div>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+    <div style="height: 700px;"></div>
+    <div class="container-fluid w-75 text-center h-100" id="activities">
+        </br>
+        </br>
+        </br>
+        <row>
+            <h3>
+                Activities!
+            </h3>
+        </row>
+
+        </br>
+    </div>
+    <div style="height: 700px;"></div>
 
 
 
@@ -100,6 +68,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 800
+    });
+</script>
 
 
 </html>
