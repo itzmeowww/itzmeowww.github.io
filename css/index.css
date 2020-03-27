@@ -34,22 +34,36 @@
 
 .name-container-text {
     position: relative;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 .name-container-text-group {
     margin-top: 35vh;
 }
 
-.name-container-text-group :hover {
+
+/* .name-container-text-group :hover {
+    animation: text-animation 1s;
+    animation-iteration-count: 1;
+} */
+
+.name-container-text-animation {
     animation: text-animation 1s;
 }
 
 @keyframes text-animation {
-    from {
+    0% {
         color: snow;
+        top: -1rem;
     }
-    to {
+    50% {
         color: springgreen;
+        top: 0rem;
+    }
+    100% {
+        color: black;
+        top: 0rem;
     }
 }
 
