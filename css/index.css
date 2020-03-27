@@ -1,16 +1,110 @@
-@font-face {
-    font-family: BloggerSans;
-    src: url('bloggersan/Blogger_Sans.otf');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@media screen and (min-width: 0px) {
+    .name-container {
+        background-color: lightblue;
+        transition: background-color 0.5s ease;
+    }
+    .name-container-text {
+        font-size: 25px;
+        transition: font-size 0.5s;
+    }
 }
 
-.robotof {
-    font-family: 'Roboto Condensed', sans-serif;
+@media screen and (min-width: 450px) {
+    .name-container {
+        background-color: skyblue;
+        transition: background-color 0.5s ease;
+    }
+    .name-container-text {
+        font-size: 50px;
+        transition: font-size 0.5s;
+    }
 }
 
+@media screen and (min-width: 870px) {
+    .name-container {
+        background-color: teal;
+        transition: background-color 0.5s ease;
+    }
+    .name-container-text {
+        font-size: 100px;
+        transition: font-size 0.5s;
+    }
+}
+
+.name-container-text {
+    position: relative;
+}
+
+.name-container-text-group {
+    margin-top: 35vh;
+}
+
+.name-container-text-group :hover {
+    animation: text-animation 1s;
+}
+
+@keyframes text-animation {
+    from {
+        color: snow;
+    }
+    to {
+        color: springgreen;
+    }
+}
+
+
+/* @media only screen and (min-width: 850px) {} */
+
+.name-container {
+    position: relative;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-in {
+    position: relative;
+    animation: fade-in 2s;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+html,
 body {
-    background-color: #93b5d1;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
 }
 
-.bgsf {
-    font-family: BloggerSans;
+@keyframes fade-in {
+    from {
+        opacity: 0.2;
+        top: -2rem;
+    }
+    to {
+        opacity: 1;
+        top: 0rem;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }

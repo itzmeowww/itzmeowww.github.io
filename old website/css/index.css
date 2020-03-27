@@ -1,0 +1,16 @@
+@font-face {
+    font-family: BloggerSans;
+    src: url('bloggersan/Blogger_Sans.otf');
+}
+
+.robotof {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: #93b5d1;
+}
+
+.bgsf {
+    font-family: BloggerSans;
+}
