@@ -35,21 +35,24 @@
 }
 
 .text {
-    display: none;
+    display: flex;
     position: absolute;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgb(0, 0, 0, 0.8);
     z-index: 2;
     transition: background-color 0.5s;
     text-align: center;
     color: snow;
 }
 
-.my-img:hover .text {
+
+/* .my-img:hover .text {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 0, 0, 0.8);
     transition: background-color 0.5s;
-}
+} */

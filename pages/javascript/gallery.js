@@ -21,8 +21,11 @@ var imagesRef = storageRef.child('gallery');
 $(".my-img").hide();
 
 
+
+
 function updateDesc(elem, val) {
-    elem.children(".text").children("h3").text('Text ' + val);
+    elem.children(".text").children("h3").text(val);
+    console.log('Updated ' + val);
 }
 
 imagesRef.listAll().then(function(res) {
@@ -45,7 +48,15 @@ imagesRef.listAll().then(function(res) {
             });
 
             elem.children(".img-container").children(".img").attr("src", url);
+            elem.children(".text").hide();
 
+            elem.hover(function() {
+                console.log("hover");
+                jQuery(this).children(".text").show();
+            }, function() {
+                console.log("hover");
+                jQuery(this).children(".text").hide();
+            });
 
             elem.show();
             console.log('Add ' + fileName + ' ' + url);
@@ -60,13 +71,4 @@ imagesRef.listAll().then(function(res) {
     console.log(error);
 });
 
-
-
-
-// $(".my-img").hover(function() {
-//     console.log("hover");
-//     jQuery(this).children(".text").show();
-// }, function() {
-//     console.log("hover");
-//     jQuery(this).children(".text").hide();
-// });
+console.log('Exit!');
