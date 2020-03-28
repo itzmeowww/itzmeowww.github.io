@@ -16,9 +16,9 @@
         transition: font-size 0.5s;
     }
     .btn {
-        font-size: 5px;
-        width: 10px;
-        height: 10px;
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
         background-color: coral;
         color: snow;
         transition: width, height, color, background-color 0.5s;
@@ -36,9 +36,9 @@
         transition: font-size 0.5s;
     }
     .btn {
-        font-size: 10px;
-        width: 20px;
-        height: 20px;
+        font-size: 15px;
+        width: 25px;
+        height: 25px;
         background-color: coral;
         color: snow;
         transition: width, height, color, background-color 0.5s;
