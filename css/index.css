@@ -220,8 +220,11 @@ body::-webkit-scrollbar-thumb {
     margin-top: 5rem;
     text-align: center;
     align-items: center;
-    /* display: flex; */
-    justify-content: space-around;
+}
+
+.btn-icon {
+    display: flex;
+    justify-content: center;
 }
 
 .btn-sha-right-down {
