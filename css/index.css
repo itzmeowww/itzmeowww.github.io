@@ -5,7 +5,14 @@
     --bg-4: #ebfffa;
 }
 
+
+/* Google Font  */
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Pulse Loader */
+
+@import url('pages/css/loader.css');
 @media screen and (min-width: 0px) {
     .name-container {
         background-color: var(--bg-4);
@@ -112,7 +119,7 @@
         color: snow;
         top: -1rem;
     }
-    80% {
+    60% {
         color: coral;
         top: 0.5ex;
     }
@@ -162,38 +169,6 @@ body {
     to {
         opacity: 1;
         top: 0rem;
-    }
-}
-
-.loader {
-    background-color: lightsalmon;
-    /* Light grey */
-    /* Blue */
-    border-radius: 50%;
-    width: 30vh;
-    height: 30vh;
-    animation: pulse 0.7s linear infinite;
-    margin: 30vh auto;
-}
-
-.loader-container {
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.5);
-        opacity: 100%;
-    }
-    60% {
-        transform: scale(0.8);
-        opacity: 30%;
-    }
-    100% {
-        transition: scale(1.0);
-        opacity: 0%;
     }
 }
 
@@ -266,4 +241,34 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes btn-down-ani {
     0% {}
+}
+
+.me-container {
+    height: 100vh;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.my-img-contianer {
+    height: 30vh;
+    width: 30vh;
+    background-color: snow;
+    margin: 5px;
+}
+
+.gallery-btn {
+    background-color: coral;
+    border-width: 0px;
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.gallery-btn:hover {
+    background-color: salmon;
 }

@@ -19,29 +19,21 @@ var imagesRef = storageRef.child('gallery');
 
 
 $(".my-img").hide();
-
-
+$(".title").hide();
 
 
 function updateDesc(elem, val) {
     elem.children(".text").children("h3").text(val);
-    console.log('Updated ' + val);
 }
 
 imagesRef.listAll().then(function(res) {
     res.items.forEach(function(item) {
-        console.log(item.name);
         var fileName = item.name;
         var img = imagesRef.child(fileName);
         img.getDownloadURL().then(function(url) {
             var elem = $(".my-img:last");
-
             $(".gallery").append(elem.clone());
             var nosuf = fileName.split('.').slice(0, -1).join('.');
-
-
-
-
             var galleryRef = firebase.database().ref('/gallery/' + nosuf);
             galleryRef.on('value', function(snapshot) {
                 updateDesc(elem, snapshot.val().description);
@@ -50,18 +42,17 @@ imagesRef.listAll().then(function(res) {
             elem.children(".img-container").children(".img").attr("src", url);
             elem.children(".text").hide();
 
+            $(".loader-container").hide();
+            $(".title").show();
+            $(".title").addClass("fold");
             elem.hover(function() {
-                console.log("hover");
-                elem.children(".text").toggle();
+                elem.children(".text").show();
 
             }, function() {
-                console.log("hover");
-                elem.children(".text").toggle();
+                elem.children(".text").hide();
             });
 
             elem.show();
-            console.log('Add ' + fileName + ' ' + url);
-
         }).catch(function(error) {
             console.log('Error!!');
             console.log(error)
@@ -72,4 +63,7 @@ imagesRef.listAll().then(function(res) {
     console.log(error);
 });
 
-console.log('Exit!');
+
+$("html").on("swiperight", function() {
+    window.history.back();
+});

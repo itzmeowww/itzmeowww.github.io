@@ -90,3 +90,8 @@ $(".btn").hover(function() {
 }, function() {
     $(this).removeClass("btn-no-sha");
 });
+
+
+$(".gallery-btn").click(function() {
+    window.location.href = "pages/gallery.html"
+})

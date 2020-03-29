@@ -1,11 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('loader.css');
 * {
     font-family: 'Open Sans', sans-serif;
 }
 
 .title {
+    display: flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    background-color: coral;
+    height: 100vh;
+    font-size: 48px;
+}
+
+.title.fold {
+    animation: fold 2s;
+    height: 30vh;
+    background-color: white;
+    font-size: 20px;
+}
+
+@keyframes fold {
+    0% {
+        height: 100vh;
+        background-color: coral;
+        font-size: 48px;
+    }
+    30% {
+        height: 100vh;
+        background-color: coral;
+        font-size: 48px;
+    }
+    100% {
+        height: 30vh;
+        background-color: white;
+        font-size: 20px;
+    }
 }
 
 .gallery {
@@ -26,8 +58,28 @@
 
 .img {
     position: relative;
-    height: 250px;
     /* display: block; */
+}
+
+@media only screen and (min-width: 0px) {
+    .img {
+        width: 150px;
+        transition: width 0.5s;
+    }
+}
+
+@media only screen and (min-width: 300px) {
+    .img {
+        width: 200px;
+        transition: width 0.5s;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .img {
+        width: 300px;
+        transition: width 0.5s;
+    }
 }
 
 .img-container {
