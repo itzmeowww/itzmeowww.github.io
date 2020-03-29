@@ -111,10 +111,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
+var check = false;
+
 function add_visitor_count(x) {
-    database.ref('/stat').update({
-        "visitCount": x,
-    });
+
+    if (!check) {
+        database.ref('/stat').update({
+            "visitCount": x,
+        });
+        check = true;
+    }
 }
 var visitor;
 database.ref('/stat').once('value').then(function(snapshot) {
