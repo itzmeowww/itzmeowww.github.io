@@ -52,10 +52,11 @@ imagesRef.listAll().then(function(res) {
 
             elem.hover(function() {
                 console.log("hover");
-                jQuery(this).children(".text").show();
+                elem.children(".text").toggle();
+
             }, function() {
                 console.log("hover");
-                jQuery(this).children(".text").hide();
+                elem.children(".text").toggle();
             });
 
             elem.show();
