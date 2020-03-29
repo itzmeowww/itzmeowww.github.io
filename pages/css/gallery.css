@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('font.css');
 @import url('loader.css');
-* {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .title {
     display: flex;
     text-align: center;
@@ -11,6 +7,8 @@
     align-items: center;
     position: relative;
     background-color: coral;
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 300;
     height: 100vh;
     font-size: 48px;
 }
@@ -94,6 +92,8 @@
     height: 100%;
     width: 100%;
     background-color: rgb(0, 0, 0, 0.8);
+    font-family: 'Krub', sans-serif;
+    font-weight: 300;
     z-index: 2;
     transition: background-color 0.5s;
     text-align: center;
@@ -108,3 +108,7 @@
     background-color: rgb(0, 0, 0, 0.8);
     transition: background-color 0.5s;
 } */
+
+* {
+    font-family: 'Krub', sans-serif;
+}
