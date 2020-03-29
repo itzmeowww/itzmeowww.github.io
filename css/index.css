@@ -255,6 +255,10 @@ body::-webkit-scrollbar-thumb {
     color: snow;
 }
 
+.social-media>.social-media-icons {
+    margin-bottom: 30px;
+}
+
 
 /* Darker background on mouse-over */
 
