@@ -110,7 +110,11 @@ $(document).ready(function() {
 
 
     $(".gallery-btn").click(function() {
-        window.location.href = "pages/gallery.html"
+        window.location.href = "pages/gallery.html";
+    });
+
+    $(".soc-btn").click(function() {
+        window.location.href = $(this).attr("href");
     });
 
 });

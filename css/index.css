@@ -225,6 +225,36 @@ body::-webkit-scrollbar-thumb {
     transition: box-shadow 0.5s;
 }
 
+.social-media {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.social-media>.social-media-icons>.btn {
+    border-width: 0px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    margin: 5px;
+    background-color: black;
+}
+
+.social-media>.social-media-icons>.btn>.btn-icon>.icon {
+    color: snow;
+}
+
+.social-media>.social-media-icons>.btn>.btn-icon>.icon:hover {
+    color: lightgreen;
+}
+
+.social-media>.text {
+    margin: 20px;
+    color: snow;
+}
+
 
 /* Darker background on mouse-over */
 
