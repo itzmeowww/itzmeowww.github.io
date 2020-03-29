@@ -262,6 +262,13 @@ body::-webkit-scrollbar-thumb {
     margin-bottom: 30px;
 }
 
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
 
 /* Darker background on mouse-over */
 
