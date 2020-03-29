@@ -15,8 +15,12 @@ var database = firebase.database();
 var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var imagesRef = storageRef.child('gallery');
+var touch = false;
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    touch = true;
+}
 
-
+console.log('Touch ' + touch.toString());
 
 $(".my-img").hide();
 $(".title").hide();
@@ -45,15 +49,18 @@ imagesRef.listAll().then(function(res) {
             $(".loader-container").hide();
             $(".title").show();
             $(".title").addClass("fold");
-            elem.hover(function() {
-                elem.children(".text").show();
+            if (!touch) {
+                console.log('Add hover');
+                elem.hover(function() {
+                    elem.children(".text").show();
 
-            }, function() {
-                elem.children(".text").hide();
-            });
+                }, function() {
+                    elem.children(".text").hide();
+                });
+            }
 
-            var textclick = 0;
-            elem.children(".text").click(function() {
+
+            elem.click(function() {
                 console.log('click');
                 elem.children(".text").slideToggle();
             });
