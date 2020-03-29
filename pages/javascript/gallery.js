@@ -11,6 +11,8 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var perf = firebase.performance();
+
 var database = firebase.database();
 var storage = firebase.storage();
 var storageRef = firebase.storage().ref();

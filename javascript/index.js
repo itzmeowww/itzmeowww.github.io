@@ -110,7 +110,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-
+var perf = firebase.performance();
 var check = false;
 
 function add_visitor_count(x) {
