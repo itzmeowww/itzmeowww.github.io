@@ -23,13 +23,16 @@
     0% {
         transform: scale(0.5);
         opacity: 100%;
+        visibility: visible;
     }
     60% {
         transform: scale(0.8);
         opacity: 30%;
+        visibility: visible;
     }
     100% {
         transition: scale(1.0);
         opacity: 0%;
+        visibility: invisible;
     }
 }
