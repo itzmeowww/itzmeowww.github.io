@@ -29,7 +29,7 @@ $(".name-container-text").hover(function() {
 
 $(".btn-down").click(function() {
     var scroll = new SmoothScroll();
-    var anchor = document.querySelector('#div2');
+    var anchor = document.querySelector('#div3');
     scroll.animateScroll(anchor);
 
 });

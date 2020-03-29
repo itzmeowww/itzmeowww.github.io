@@ -52,6 +52,12 @@ imagesRef.listAll().then(function(res) {
                 elem.children(".text").hide();
             });
 
+            var textclick = 0;
+            elem.children(".text").click(function() {
+                console.log('click');
+                elem.children(".text").slideToggle();
+            });
+
             elem.show();
         }).catch(function(error) {
             console.log('Error!!');
@@ -62,6 +68,8 @@ imagesRef.listAll().then(function(res) {
     console.log('Error');
     console.log(error);
 });
+
+
 
 
 $("html").on("swiperight", function() {
