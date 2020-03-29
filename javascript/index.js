@@ -25,8 +25,6 @@ $(".name-container-text").hover(function() {
 
 
 
-
-
 $(".btn-down").click(function() {
     var scroll = new SmoothScroll();
     var anchor = document.querySelector('#div3');
@@ -94,4 +92,33 @@ $(".btn").hover(function() {
 
 $(".gallery-btn").click(function() {
     window.location.href = "pages/gallery.html"
-})
+});
+
+
+
+// firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyAh6_jWRi5sM87CLQG62yFN6HgdG35-iSQ",
+    authDomain: "itzmeo-github-io.firebaseapp.com",
+    databaseURL: "https://itzmeo-github-io.firebaseio.com",
+    projectId: "itzmeo-github-io",
+    storageBucket: "itzmeo-github-io.appspot.com",
+    messagingSenderId: "670423305836",
+    appId: "1:670423305836:web:1ad3ee041a3660765e9249",
+    measurementId: "G-8MVVWVBVNR"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
+function add_visitor_count(x) {
+    database.ref('/stat').update({
+        "visitCount": x,
+    });
+}
+var visitor;
+database.ref('/stat').once('value').then(function(snapshot) {
+    visitor = (snapshot.val().visitCount);
+    console.log(visitor);
+    add_visitor_count(visitor + 1);
+});
