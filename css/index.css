@@ -289,8 +289,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .social-media>.social-media-icons>.btn {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.6ex;
+    margin-right: 0.6ex;
     margin-top: 0vh;
     background-color: black;
 }
