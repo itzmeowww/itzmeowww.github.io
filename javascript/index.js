@@ -75,6 +75,10 @@ $(document).ready(function() {
         scroll.animateScroll(anchor, null, options);
     });
 
+    var scroll2 = new SmoothScroll('a[href*="#"]', {
+        speed: 1200,
+    });
+
 
     // var scroll = new SmoothScroll('[data-scroll]', {
     //     speed: 1300
