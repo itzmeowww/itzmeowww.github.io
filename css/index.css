@@ -23,13 +23,17 @@
         transition: font-size 0.5s;
     }
     .btn {
-        font-size: 10px;
+        font-size: 15px;
         width: 20px;
         height: 20px;
         background-color: coral;
         color: snow;
         transition: width, height, color, background-color 0.5s;
         transition: font-size 0.5s;
+    }
+    .social-media {
+        font-size: 20px;
+        transition: font-size 1s;
     }
 }
 

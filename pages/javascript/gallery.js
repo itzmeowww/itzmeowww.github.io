@@ -84,7 +84,8 @@ $(document).ready(function() {
 
 
     $("html").on("swiperight", function() {
-        window.history.back();
+        console.log("swipe!");
+        //window.history.back();
     });
 
 
