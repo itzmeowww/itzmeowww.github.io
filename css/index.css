@@ -19,7 +19,7 @@
         transition: background-color 0.5s ease;
     }
     .name-container-text {
-        font-size: 15px;
+        font-size: 20px;
         transition: font-size 0.5s;
     }
     .btn {
@@ -32,10 +32,10 @@
         transition: font-size 0.5s;
     }
     .social-media-icons>.btn {
-        font-size: 20px;
+        font-size: 25px;
     }
     .social-media {
-        font-size: 20px;
+        font-size: 25px;
         transition: font-size 1s;
     }
     .me-container {
@@ -286,11 +286,12 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     background-color: black;
     font-family: 'Prompt', sans-serif;
+    padding-bottom: 2rem;
 }
 
 .social-media>.social-media-icons>.btn {
-    margin-left: 0.6ex;
-    margin-right: 0.6ex;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
     margin-top: 0vh;
     background-color: black;
 }
