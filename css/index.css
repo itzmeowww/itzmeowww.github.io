@@ -35,6 +35,22 @@
         font-size: 20px;
         transition: font-size 1s;
     }
+    .me-container {
+        height: 200vh;
+        flex-direction: column;
+    }
+    .me-left {
+        width: 100vw;
+    }
+    .me-left:hover {
+        width: 100vw;
+    }
+    .me-right {
+        width: 100vw;
+    }
+    .me-right:hover {
+        width: 100vw;
+    }
 }
 
 @media screen and (min-width: 440px) {
@@ -82,6 +98,22 @@
     .social-media {
         font-size: 20px;
         transition: font-size 1s;
+    }
+    .me-container {
+        height: 100vh;
+        flex-direction: row;
+    }
+    .me-left {
+        width: 40vw;
+    }
+    .me-left:hover {
+        width: 45vw;
+    }
+    .me-right {
+        width: 60vw;
+    }
+    .me-right:hover {
+        width: 65vw;
     }
 }
 
@@ -206,7 +238,6 @@ body::-webkit-scrollbar-thumb {
     /* border-radius: 50%; */
     border: none;
     cursor: pointer;
-    margin-top: 5rem;
     text-align: center;
     align-items: center;
     text-decoration: none;
@@ -258,6 +289,8 @@ body::-webkit-scrollbar-thumb {
 
 .social-media>.social-media-icons>.btn>.btn-icon>.icon {
     color: snow;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .social-media>.social-media-icons>.btn>.btn-icon>.icon:hover {
@@ -266,8 +299,17 @@ body::-webkit-scrollbar-thumb {
 
 .social-media>.soc-title {
     margin: 1.5rem;
+    letter-spacing: 0.5ex;
     font-family: 'Sarabun', sans-serif;
     color: snow;
+    transition: letter-spacing 1s, color 1s;
+    cursor: pointer;
+}
+
+.social-media>.soc-title:hover {
+    letter-spacing: 0ex;
+    color: palegreen;
+    transition: letter-spacing 1s, color 1s;
 }
 
 .social-media>.social-media-icons {
@@ -299,20 +341,69 @@ body::-webkit-scrollbar-thumb {
 }
 
 .me-container {
-    height: 100vh;
-    background-color: lightslategray;
+    width: 100vw;
+    background-color: rgb(159, 143, 250);
     display: flex;
+    max-width: 100%;
+    transition: all 0.4s;
+}
+
+.me-left {
+    height: 100vh;
+    transition: width 1s;
+}
+
+.me-left:hover {
+    transition: width 1s;
+}
+
+.my-img-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 30vh;
+    transform: rotate(0deg);
+    transition: all 2s;
+}
+
+.my-img {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 50%;
+    transition: transform 2s;
+}
+
+.my-img-container :hover {
+    transform: rotate(360deg);
+    transition: transform 5s;
+}
+
+.me-caption {
+    background-color: rgba(255, 250, 250, 0.25);
+    line-height: 1.5rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vh;
+    height: 40vh;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 0.5rem;
+}
+
+.me-right {
+    height: 100vh;
+    transition: width 1s;
+    background-color: rgb(137, 100, 207);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
-    align-content: center;
     align-items: center;
 }
 
-.my-img-contianer {
-    height: 30vh;
-    width: 30vh;
-    background-color: snow;
-    margin: 5px;
+.me-right:hover {
+    transition: width 1s;
 }
 
 .gallery-btn {
@@ -326,7 +417,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     font-family: 'Sarabun', sans-serif;
     font-size: 20px;
-    margin: 5px;
+    margin: 10px;
     text-decoration: none;
     color: snow;
 }
@@ -338,4 +429,27 @@ body::-webkit-scrollbar-thumb {
 
 .gallery-btn:hover {
     background-color: salmon;
+}
+
+.kvis-link {
+    text-decoration: none;
+    color: black;
+    transition: color 1s;
+}
+
+.kvis-link:hover {
+    color: snow;
+    transition: color 1s;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0rem;
+    transition: letter-spacing 1s;
+}
+
+.contact-link:hover {
+    letter-spacing: 0.2ex;
+    transition: letter-spacing 1s;
 }
