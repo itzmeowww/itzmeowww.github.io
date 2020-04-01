@@ -1,13 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyAh6_jWRi5sM87CLQG62yFN6HgdG35-iSQ",
-    authDomain: "itzmeo-github-io.firebaseapp.com",
-    databaseURL: "https://itzmeo-github-io.firebaseio.com",
-    projectId: "itzmeo-github-io",
-    storageBucket: "itzmeo-github-io.appspot.com",
-    messagingSenderId: "670423305836",
-    appId: "1:670423305836:web:1ad3ee041a3660765e9249",
-    measurementId: "G-8MVVWVBVNR"
-};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -17,6 +7,7 @@ var database = firebase.database();
 var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var imagesRef = storageRef.child('gallery');
+
 var touch = false;
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     touch = true;
@@ -43,9 +34,17 @@ $(document).ready(function() {
                 $(".gallery").append(elem.clone());
                 var nosuf = fileName.split('.').slice(0, -1).join('.');
                 var galleryRef = firebase.database().ref('/gallery/' + nosuf);
-                galleryRef.on('value', function(snapshot) {
-                    updateDesc(elem, snapshot.val().description);
+
+                img.getMetadata().then(function(metadata) {
+                    // Metadata now contains the metadata for 'images/forest.jpg'
+                    console.log('Metadata');
+                    console.log(metadata['customMetadata']);
+                    updateDesc(elem, metadata['customMetadata']['title']);
+                }).catch(function(error) {
+                    // Uh-oh, an error occurred!
                 });
+
+
 
                 elem.children(".img-container").children(".img").attr("src", url);
                 elem.children(".text").hide();

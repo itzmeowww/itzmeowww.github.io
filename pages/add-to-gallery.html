@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/add-to-gallery.css">
+    <title>Upload to Win's Gallery</title>
+</head>
+
+<body>
+
+    <div class="loader-container">
+        <div class="loader">
+
+        </div>
+    </div>
+
+    <div class="login">
+        <h1>Sign in</h1>
+        <form action="" id="login-form">
+            <label for="Email">Email:</label><br>
+            <input type="text" id="lemail" name="email"><br>
+            <label for="Password">Password:</label><br>
+            <input type="password" id="lpassword" name="password"></br>
+            <input type="submit" />
+        </form>
+        <button id="tosignup">Switch to Sign up</button></br>
+        <button class="signout">Sign out</button>
+    </div>
+
+    <div class="register">
+        <h1>Sign up</h1>
+        <form action="" id="register-form">
+            <label for="Email">Email:</label><br>
+            <input type="text" id="remail" name="email"><br>
+            <label for="Password">Password:</label><br>
+            <input type="password" id="rpassword" name="password"></br>
+            <input type="submit" />
+        </form>
+        <button id="tosignin">Switch to Sign in</button></br>
+        <button class="signout">Sign out</button>
+    </div>
+
+    <form action="" id="my-form">
+        <h1>Upload</h1>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="cap">Caption:</label><br>
+        <input type="text" id="cap" name="cap"></br>
+        <input type='file' id="file"></br>
+        <input type="submit"></br>
+        <button class="signout">Sign out</button>
+    </form>
+
+
+    <!-- Firebase Services -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-performance.js"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <script src="javascript/firebase.js"></script>
+    <script src="javascript/add-to-gallery.js"></script>
+</body>
+
+</html>

@@ -286,7 +286,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     background-color: black;
     font-family: 'Prompt', sans-serif;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .social-media>.social-media-icons>.btn {
