@@ -1,5 +1,3 @@
-import { strict } from "assert";
-
 firebase.initializeApp(firebaseConfig);
 var perf = firebase.performance();
 
@@ -36,8 +34,8 @@ var upload = function(ref, file, title, caption) {
         alert('Completed!');
 
     }).catch(function(error) {
-        user = firebase.auth().currentUser
-        alert('Log in as : ' + user.email)
+        user = firebase.auth().currentUser;
+        alert('Log in as : ' + user.email);
         alert(error.message);
         console.log('Error');
         console.log(error);
@@ -147,6 +145,7 @@ $(document).ready(function() {
             console.log(errorMessage);
             alert('Error! ' + errorMessage);
             $(".loader-container").hide();
+            $("#login-form").show();
             // ...
         });
     });
