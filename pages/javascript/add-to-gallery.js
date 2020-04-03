@@ -1,3 +1,5 @@
+import { strict } from "assert";
+
 firebase.initializeApp(firebaseConfig);
 var perf = firebase.performance();
 
@@ -34,6 +36,8 @@ var upload = function(ref, file, title, caption) {
         alert('Completed!');
 
     }).catch(function(error) {
+        user = firebase.auth().currentUser
+        alert('Log in as : ' + user.email)
         alert(error.message);
         console.log('Error');
         console.log(error);
@@ -69,7 +73,7 @@ $(document).ready(function() {
     $('.login').show();
     $('.register').hide();
 
-    $(".myform").submit(function(e) {
+    $("#my-form").submit(function(e) {
         e.preventDefault();
     });
 
