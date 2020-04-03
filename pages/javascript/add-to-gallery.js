@@ -10,7 +10,7 @@ var imagesRef = storageRef.child('gallery');
 
 var upload = function(ref, file, title, caption) {
     console.log('Uploading . . .');
-    $("#my-form").hide();
+    $(".myform").hide();
     $(".loader-container").show();
     var date = new Date().valueOf();
     var dates = Date().valueOf().split(" ");
@@ -29,7 +29,7 @@ var upload = function(ref, file, title, caption) {
 
     thisRef.put(file, metadata).then(function(snapshot) {
         console.log('Uploaded a blob or file! to ' + thisRef);
-        $("#my-form").show();
+        $(".myform").show();
         $(".loader-container").hide();
         alert('Completed!');
 
@@ -37,7 +37,7 @@ var upload = function(ref, file, title, caption) {
         alert(error.message);
         console.log('Error');
         console.log(error);
-        $("#my-form").show();
+        $(".myform").show();
         $(".loader-container").hide();
     });
     console.log(file);
@@ -53,7 +53,7 @@ $(document).ready(function() {
             // if a user forgets to sign out.
             // ...
             // New sign-in will be persisted with session persistence.
-            $("#my-form").show();
+            $(".myform").show();
             $('.login').hide();
             $('.register').hide();
             return firebase.auth().signInWithEmailAndPassword(email, password);
@@ -65,11 +65,11 @@ $(document).ready(function() {
             var errorMessage = error.message;
         });
     $(".loader-container").hide();
-    $("#my-form").hide();
+    $(".myform").hide();
     $('.login').show();
     $('.register').hide();
 
-    $("#my-form").submit(function(e) {
+    $(".myform").submit(function(e) {
         e.preventDefault();
     });
 
@@ -129,11 +129,11 @@ $(document).ready(function() {
         var email = $('#lemail').val();
         var password = $('#lpassword').val();
         $(".loader-container").show();
-        $("#logib-form").hide();
+        $("#login-form").hide();
         firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
             $('.login').hide();
             $('.register').hide();
-            $('#my-form').show();
+            $('myform').show();
             $(".loader-container").hide();
         }).catch(function(error) {
             // Handle Errors here.
@@ -165,6 +165,10 @@ $(document).ready(function() {
     $('.signout').click(function() {
         firebase.auth().signOut().then(function() {
             alert('sign out!');
+            $('.login').show();
+            $('.register').hide();
+            $('.myform').hide();
+
         }).catch(function(error) {
             alert('error! ' + error);
         });

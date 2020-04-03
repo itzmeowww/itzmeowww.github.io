@@ -391,8 +391,8 @@ body::-webkit-scrollbar-thumb {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
-    width: 40vh;
-    height: 40vh;
+    width: 30vh;
+    height: 30vh;
     border-radius: 10px;
     text-align: center;
     font-size: 16px;
