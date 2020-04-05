@@ -1,0 +1,13 @@
+.main {
+    background-color: coral;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+tml,
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
