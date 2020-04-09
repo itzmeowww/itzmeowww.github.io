@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    window.devicePixelRatio = 1;
 
     window.fbAsyncInit = function() {
         FB.init({
@@ -126,21 +127,25 @@ $(document).ready(function() {
 
 
     $("#btnSave").click(function() {
+        console.log(window.devicePixelRatio);
         var btn = $(this);
         console.log("Click");
         btn.text('Saving');
-        html2canvas($("#my-oreo")[0]).then(function(canvas) {
+        html2canvas($("#my-oreo")[0], {
+            backgroundColor: null,
+        }).then(function(canvas) {
+            $(canvas).removeAttr('style');
+            console.log(canvas);
+
+
+
             btn.text('Save PNG');
-            var url = canvas.toDataURL("image/png".replace("image/png", "image/octet-stream"));
+            var download_url = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            var url = canvas.toDataURL("image/png");
+            // window.open(url);
+
             debugBase64(url);
-            /**
-             * Display a base64 URL inside an iframe in another window.
-             */
-
-
-            // e.g This will open an image in a new window
-
-
+            // $('#img-out').append(canvas);
         });
 
 
