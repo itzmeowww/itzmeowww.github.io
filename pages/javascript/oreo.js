@@ -48,7 +48,6 @@ $(document).ready(function() {
             if (layer.type == 'cookie') name += 'O';
             else name += 'RE';
         }
-        console.log($('.text').text());
         console.log(name);
         $('.text').text(name);
     }
@@ -125,6 +124,31 @@ $(document).ready(function() {
         win.document.write('<iframe src="' + base64URL + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>');
     }
 
+    function download(canvas, filename) {
+        /// create an "off-screen" anchor tag
+        var lnk = document.createElement('a'),
+            e;
+
+        /// the key here is to set the download attribute of the a tag
+        lnk.download = filename;
+
+        /// convert canvas content to data-uri for link. When download
+        /// attribute is set the content pointed to by link will be
+        /// pushed as "download" in HTML5 capable browsers
+        lnk.href = canvas.toDataURL("image/png;base64");
+
+        /// create a "fake" click-event to trigger the download
+        if (document.createEvent) {
+            e = document.createEvent("MouseEvents");
+            e.initMouseEvent("click", true, true, window,
+                0, 0, 0, 0, 0, false, false, false,
+                false, 0, null);
+
+            lnk.dispatchEvent(e);
+        } else if (lnk.fireEvent) {
+            lnk.fireEvent("onclick");
+        }
+    }
 
     $("#btnSave").click(function() {
         console.log(window.devicePixelRatio);
@@ -136,20 +160,17 @@ $(document).ready(function() {
         }).then(function(canvas) {
             $(canvas).removeAttr('style');
             console.log(canvas);
-
-
-
+            // console.log($('.text').text());
+            download(canvas, $('.text').text());
             btn.text('Save PNG');
-            var download_url = canvas.toDataURL("image/png");
-            var url = canvas.toDataURL("image/png");
+            // var download_url = canvas.toDataURL("image/png");
+            // var url = canvas.toDataURL("image/png");
             // window.open(url);
 
-            debugBase64(download_url);
+            // debugBase64(download_url);
             // $('#img-out').append(canvas);
         });
 
-
-        console.log("hi");
     });
 
 
