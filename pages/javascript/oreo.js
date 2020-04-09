@@ -140,7 +140,7 @@ $(document).ready(function() {
 
 
             btn.text('Save PNG');
-            var download_url = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            var download_url = canvas.toDataURL("image/png");
             var url = canvas.toDataURL("image/png");
             // window.open(url);
 
