@@ -6,6 +6,7 @@
 
 .controller {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -17,6 +18,8 @@
     margin: 5px;
     padding: 5px;
     font-size: 16px;
+    text-decoration: none;
+    color: black;
 }
 
 .my-oreo-container {

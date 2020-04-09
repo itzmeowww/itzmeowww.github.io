@@ -135,7 +135,7 @@ $(document).ready(function() {
         /// convert canvas content to data-uri for link. When download
         /// attribute is set the content pointed to by link will be
         /// pushed as "download" in HTML5 capable browsers
-        lnk.href = canvas.toDataURL("image/png;base64");
+        lnk.href = canvas.toDataURL("image/png");
 
         /// create a "fake" click-event to trigger the download
         if (document.createEvent) {
@@ -150,22 +150,23 @@ $(document).ready(function() {
         }
     }
 
-    $("#btnSave").click(function() {
+    $("#update").click(function() {
         console.log(window.devicePixelRatio);
-        var btn = $(this);
+        var btn = $('#btnSave');
         console.log("Click");
-        btn.text('Saving');
+
         html2canvas($("#my-oreo")[0], {
             backgroundColor: null,
         }).then(function(canvas) {
-            $(canvas).removeAttr('style');
+            // s$(canvas).removeAttr('style');
             console.log(canvas);
             // console.log($('.text').text());
-            download(canvas, $('.text').text());
-            btn.text('Save PNG');
+            // download(canvas, $('.text').text());
             // var download_url = canvas.toDataURL("image/png");
-            // var url = canvas.toDataURL("image/png");
-            // window.open(url);
+            var url = canvas.toDataURL('image/png');
+            btn.attr("href", url);
+            console.log(url);
+
 
             // debugBase64(download_url);
             // $('#img-out').append(canvas);
