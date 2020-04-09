@@ -32,6 +32,14 @@
     justify-content: center;
 }
 
+.text {
+    justify-content: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: center;
+    width: 80vw;
+}
+
 html {
     background-color: lightblue;
     font-family: 'Open Sans', sans-serif;
