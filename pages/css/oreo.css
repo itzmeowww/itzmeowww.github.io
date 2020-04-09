@@ -1,0 +1,40 @@
+@import url('font.css');
+.my-oreo {
+    width: 20vw;
+    background-color: lightblue;
+}
+
+.controller {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: lightcoral;
+    border: 0px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.my-oreo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+html {
+    background-color: lightblue;
+    font-family: 'Open Sans', sans-serif;
+    ;
+}
+
+#img-out {
+    top: 50vh;
+    left: 50vw;
+}

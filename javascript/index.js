@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $("html:not(.loader-container)").hide();
     $(".loader-container").hide();
     $("html:not(.loader-container)").show();
