@@ -58,7 +58,7 @@ $(document).ready(function() {
                 add = 10;
             } else {
                 if (mode == 'cream') add = 15;
-                else add = 5;
+                else add = 0;
             }
         }
 
