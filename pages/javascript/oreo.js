@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+    var top = $('#top');
+    var mid = $('#mid');
+    var bottom = $('#bottom');
+
+
     window.devicePixelRatio = 1;
 
     window.fbAsyncInit = function() {
@@ -13,39 +19,21 @@ $(document).ready(function() {
     oreo = [];
 
     console.log("ready!");
-    var oreo_height = 200;
+    var oreo_height = 300;
     var oreo_width = 300;
     var oreo_x = (oreo_width - 245) / 2;
     var oreo_y = 10;
     $('#oreo-svg').attr('viewBox', '0 0 ' + oreo_width + ' ' + oreo_height);
+    top.attr("transform", 'translate(' + oreo_x + ',' + oreo_y + ')');
+    mid.attr('transform', 'translate(' + oreo_x + ',' + oreo_y + ')');
+    bottom.attr('transform', 'translate(' + oreo_x + ',' + oreo_y + ')');
 
-
-    oreo.push({
-        'id': '#lay-1',
-        'type': 'cookie',
-        'x': oreo_x,
-        'y': oreo_y,
-    });
-    oreo.push({
-        'id': '#lay-2',
-        'type': 'cream',
-        'x': oreo_x,
-        'y': oreo_y,
-    });
-    oreo.push({
-        'id': '#lay-3',
-        'type': 'cookie',
-        'x': oreo_x,
-        'y': oreo_y,
-    });
-
-    moveOreo();
 
     function updateName() {
         var name = "";
         for (x in oreo) {
             var layer = oreo[x];
-            if (layer.type == 'cookie') name += 'O';
+            if (layer.type == 'cookie' || layer.type == 'bcookie') name += 'O';
             else name += 'RE';
         }
         console.log(name);
@@ -61,14 +49,19 @@ $(document).ready(function() {
     }
 
     function updateOreo(mode) {
-        var add;
-        if (oreo[oreo.length - 1].type == 'cookie') {
-            if (mode == 'cream') add = 40;
-            else add = 25;
-        } else {
-            if (mode == 'cream') add = 15;
-            else add = 5;
+        var add = 0;
+        if (oreo.length != 0) {
+            if (oreo[oreo.length - 1].type == 'cookie') {
+                if (mode == 'cream') add = 40;
+                else add = 25;
+            } else if (oreo[oreo.length - 1].type == 'bcookie') {
+                add = 10;
+            } else {
+                if (mode == 'cream') add = 15;
+                else add = 5;
+            }
         }
+
         for (x in oreo) {
             var layer = oreo[x];
             oreo[x].y += add;
@@ -80,8 +73,20 @@ $(document).ready(function() {
     }
 
     $('#cookie').click(function() {
+        top.attr('visibility', 'hidden');
+        mid.attr('visibility', 'hidden');
+        bottom.attr('visibility', 'hidden');
         console.log('Add cookie!');
-        var elem = $("#lay-3").clone();
+        var elem;
+        var type;
+        if (oreo.length == 0) {
+            elem = bottom.clone();
+            type = 'bcookie';
+        } else {
+            elem = top.clone();
+            type = 'cookie';
+        }
+        elem.attr('visibility', 'visible');
         console.log(oreo.length);
         var newid = "lay-" + (oreo.length + 1);
         console.log(newid);
@@ -91,7 +96,7 @@ $(document).ready(function() {
         updateOreo('cookie');
         oreo.push({
             'id': '#' + newid,
-            'type': 'cookie',
+            'type': type,
             'x': oreo_x,
             'y': oreo_y,
         });
@@ -100,8 +105,12 @@ $(document).ready(function() {
     });
 
     $('#cream').click(function() {
+        top.attr('visibility', 'hidden');
+        mid.attr('visibility', 'hidden');
+        bottom.attr('visibility', 'hidden');
         console.log('Add cookie!');
-        var elem = $("#lay-2").clone();
+        var elem = mid.clone();
+        elem.attr('visibility', 'visible');
         console.log(oreo.length);
         var newid = "lay-" + (oreo.length + 1);
         console.log(newid);
