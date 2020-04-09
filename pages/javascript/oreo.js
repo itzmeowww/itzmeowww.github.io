@@ -35,6 +35,18 @@ $(document).ready(function() {
         'y': 0,
     });
 
+    function updateName() {
+        var name = "";
+        for (x in oreo) {
+            var layer = oreo[x];
+            if (layer.type == 'cookie') name += 'O';
+            else name += 'RE';
+        }
+        console.log($('.text').text());
+        console.log(name);
+        $('.text').text(name);
+    }
+
     function updateOreo(mode) {
         console.log(oreo);
         var add;
@@ -73,6 +85,7 @@ $(document).ready(function() {
             'x': 0,
             'y': 0,
         });
+        updateName();
     });
 
     $('#cream').click(function() {
@@ -91,6 +104,7 @@ $(document).ready(function() {
             'x': 0,
             'y': 0,
         });
+        updateName();
     });
 
     function debugBase64(base64URL) {
