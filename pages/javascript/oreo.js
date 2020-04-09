@@ -144,7 +144,7 @@ $(document).ready(function() {
             var url = canvas.toDataURL("image/png");
             // window.open(url);
 
-            debugBase64(url);
+            debugBase64(download_url);
             // $('#img-out').append(canvas);
         });
 
