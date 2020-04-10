@@ -1,7 +1,7 @@
 :root {
     --bg-1: #0dceda;
     --bg-2: #76d3df;
-    --bg-3: #c6fce5;
+    --bg-3: lightblue;
     --bg-4: #ebfffa;
 }
 
@@ -402,7 +402,7 @@ body::-webkit-scrollbar-thumb {
 .me-right {
     height: 100vh;
     transition: width 1s;
-    background-color: rgb(137, 100, 207);
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
