@@ -55,7 +55,8 @@ $(document).ready(function() {
                 if (mode == 'cream') add = 40;
                 else add = 25;
             } else if (oreo[oreo.length - 1].type == 'bcookie') {
-                add = 10;
+                if (mode == 'cream') add = 10;
+                else add = -5;
             } else {
                 if (mode == 'cream') add = 15;
                 else add = 0;
@@ -126,6 +127,24 @@ $(document).ready(function() {
         });
         updateName();
         moveOreo();
+    });
+
+    $('#reset').click(function() {
+        top.attr('visibility', 'visible');
+        mid.attr('visibility', 'visible');
+        bottom.attr('visibility', 'visible');
+        for (x in oreo) {
+            var layer = oreo[x];
+            $(layer.id).remove();
+        }
+        oreo = [];
+        oreo_height = 300;
+        oreo_width = 300;
+
+        updateName();
+        $('.text').text('OREO');
+        moveOreo();
+
     });
 
     function debugBase64(base64URL) {
