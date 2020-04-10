@@ -4,6 +4,8 @@ $(document).ready(function() {
     var mid = $('#mid');
     var bottom = $('#bottom');
 
+    var tts = new GoogleTTS('en');
+
 
     window.devicePixelRatio = 1;
 
@@ -143,7 +145,12 @@ $(document).ready(function() {
 
         updateName();
         $('.text').text('OREO');
-        moveOreo();
+        updateOreo();
+
+    });
+
+
+    $('.text').click(function() {
 
     });
 
