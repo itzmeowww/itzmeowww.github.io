@@ -20,6 +20,11 @@ $(document).ready(function() {
     $(".my-img").hide();
     $(".title").hide();
 
+    var colors = ['snow', 'grays', 'lightblue', 'azure', ];
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    console.log(color);
+    $('body').css('background-color', color);
+
 
     function updateDesc(elem, val) {
         elem.children(".text").children("h3").text(val);

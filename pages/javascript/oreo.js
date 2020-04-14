@@ -27,17 +27,54 @@ $(document).ready(function() {
     mid.attr('transform', 'translate(' + oreo_x + ',' + oreo_y + ')');
     bottom.attr('transform', 'translate(' + oreo_x + ',' + oreo_y + ')');
 
+    var oreo_names = {}
+    var names_count = 0;
+    oreo_names['name1'] = 'OREO';
+
+
+    $('.text').click(function() {
+
+        names_count += 1;
+        if (names_count == Object.keys(oreo_names).length) names_count = 0;
+
+        chooseName();
+    });
+
+    function chooseName() {
+        var cou = 0;
+        for (key in oreo_names) {
+            if (cou == names_count) {
+
+                $('.text').text(oreo_names[key]);
+            }
+            cou++;
+        }
+
+
+    }
 
     function updateName() {
         var name = "";
+        var name2 = "";
         for (x in oreo) {
             var layer = oreo[x];
             if (layer.type == 'cookie' || layer.type == 'bcookie') name += 'O';
             else name += 'RE';
+
+            if (layer.type == 'cookie' || layer.type == 'bcookie') name2 += 'O';
+            else {
+                if (x > 0 && oreo[x - 1].type == 'cream') {
+                    name2 += 'e';
+                } else name2 += 're';
+            }
         }
-        console.log(name);
-        $('.text').text(name);
+        oreo_names['name1'] = name;
+        oreo_names['name2'] = name2;
+
+        chooseName();
     }
+
+
 
     function moveOreo() {
         for (x in oreo) {
