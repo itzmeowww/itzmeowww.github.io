@@ -6,10 +6,16 @@ var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var imagesRef = storageRef.child('gallery');
 
+var listed_img = [];
+
 function listImgs() {
     imagesRef.listAll().then(function(res) {
         res.items.forEach(function(itemRef) {
-
+            if (itemRef.name in listed_img) {
+                continue;
+            } else {
+                listed_img.append(itemRef.name);
+            }
             itemRef.getDownloadURL().then(function(url) {
                 var ele = $(".img-list:last").clone();
                 console.log(ele);
@@ -79,6 +85,7 @@ var upload = function(ref, file, title, caption) {
         $(".img-form").show();
         $(".loader-container").hide();
         alert('Completed!');
+        listImgs();
 
     }).catch(function(error) {
         user = firebase.auth().currentUser;
