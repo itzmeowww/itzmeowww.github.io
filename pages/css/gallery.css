@@ -59,7 +59,7 @@
 
 @media only screen and (min-width: 0px) {
     .img {
-        width: 150px;
+        width: 250px;
         /* height: 125px; */
         height: unset;
     }
@@ -68,7 +68,7 @@
 @media only screen and (min-width: 600px) {
     .img {
         /* width: 200px; */
-        height: 200px;
+        height: 250px;
         width: unset;
     }
 }
