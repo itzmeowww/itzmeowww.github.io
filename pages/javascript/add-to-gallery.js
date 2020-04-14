@@ -12,50 +12,51 @@ function listImgs() {
     imagesRef.listAll().then(function(res) {
         res.items.forEach(function(itemRef) {
             if (itemRef.name in listed_img) {
-                continue;
+
             } else {
-                listed_img.append(itemRef.name);
-            }
-            itemRef.getDownloadURL().then(function(url) {
-                var ele = $(".img-list:last").clone();
-                console.log(ele);
-                $('.list-of-image').append(ele);
-                itemRef.getMetadata().then(function(metadata) {
-                    $('.loader-container').hide();
-                    console.log(metadata);
-                    ele.show();
-                    ele.children(".img").attr("src", url);
-                    ele.children(".title-inp").val(metadata['customMetadata']['title']);
-                    ele.children(".update-metadata-btn").click(function() {
-                        var newMetadata = {
-                            customMetadata: {
-                                'title': ele.children(".title-inp").val(),
+                listed_img.push(itemRef.name);
+                itemRef.getDownloadURL().then(function(url) {
+                    var ele = $(".img-list:last").clone();
+                    console.log(ele);
+                    $('.list-of-image').append(ele);
+                    itemRef.getMetadata().then(function(metadata) {
+                        $('.loader-container').hide();
+                        console.log(metadata);
+                        ele.show();
+                        ele.children(".img").attr("src", url);
+                        ele.children(".title-inp").val(metadata['customMetadata']['title']);
+                        ele.children(".update-metadata-btn").click(function() {
+                            var newMetadata = {
+                                customMetadata: {
+                                    'title': ele.children(".title-inp").val(),
+                                }
+
+                                // 'caption': '',
                             }
+                            console.log(newMetadata);
+                            itemRef.updateMetadata(newMetadata).then(function() {
+                                console.log(itemRef.name);
+                                alert('Successfully Update');
+                                // itemRef.getMetadata().then(function(metadata) {
+                                //     ele.children(".title-inp").val(metadata['customMetadata']['title']);
+                                // });
+                            }).catch(function(err) {
+                                alert('Cannot Update');
+                                console.log(err);
+                            });
 
-                            // 'caption': '',
-                        }
-                        console.log(newMetadata);
-                        itemRef.updateMetadata(newMetadata).then(function() {
-                            console.log(itemRef.name);
-                            alert('Successfully Update');
-                            // itemRef.getMetadata().then(function(metadata) {
-                            //     ele.children(".title-inp").val(metadata['customMetadata']['title']);
-                            // });
-                        }).catch(function(err) {
-                            alert('Cannot Update');
-                            console.log(err);
+
                         });
-
-
+                        // Metadata now contains the metadata for 'images/forest.jpg'
+                    }).catch(function(error) {
+                        console.log(error);
                     });
-                    // Metadata now contains the metadata for 'images/forest.jpg'
-                }).catch(function(error) {
-                    console.log(error);
-                });
 
-            }).catch(function(err) {
-                console.log(err);
-            });
+                }).catch(function(err) {
+                    console.log(err);
+                });
+            }
+
         });
     });
 }
