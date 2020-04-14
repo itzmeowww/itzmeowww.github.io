@@ -14,7 +14,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 console.log('Touch ' + touch.toString());
-
+$(".return-btn").hide();
 $(document).ready(function() {
 
     $(".my-img").hide();
@@ -35,6 +35,10 @@ $(document).ready(function() {
             var fileName = item.name;
             var img = imagesRef.child(fileName);
             img.getDownloadURL().then(function(url) {
+                setTimeout(function() {
+                    $(".return-btn").show();
+                }, 2000);
+
                 var elem = $(".my-img:last");
                 $(".gallery").append(elem.clone());
                 var nosuf = fileName.split('.').slice(0, -1).join('.');

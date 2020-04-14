@@ -1,5 +1,6 @@
 @import url('font.css');
 @import url('loader.css');
+@import url('return.css');
 .title {
     display: flex;
     text-align: center;
@@ -66,9 +67,9 @@
 
 @media only screen and (min-width: 600px) {
     .img {
-        width: 200px;
-        /* height: 200px; */
-        height: unset;
+        /* width: 200px; */
+        height: 200px;
+        width: unset;
     }
 }
 
