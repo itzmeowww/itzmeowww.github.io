@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/add-to-gallery.css">
+    <script src="https://kit.fontawesome.com/0a488017f5.js" crossorigin="anonymous"></script>
     <title>Upload to Win's Gallery</title>
 </head>
 
@@ -15,45 +16,72 @@
 
         </div>
     </div>
-
-    <div class="login">
-        <h1>Sign in</h1>
-        <form action="" id="login-form">
-            <label for="Email">Email:</label><br>
-            <input type="text" id="lemail" name="email"><br>
-            <label for="Password">Password:</label><br>
-            <input type="password" id="lpassword" name="password"></br>
-            <input type="submit" />
-        </form>
-        <button id="tosignup">Switch to Sign up</button></br>
-        <button class="signout">Sign out</button>
-    </div>
-
-    <div class="register">
-        <h1>Sign up</h1>
-        <form action="" id="register-form">
-            <label for="Email">Email:</label><br>
-            <input type="text" id="remail" name="email"><br>
-            <label for="Password">Password:</label><br>
-            <input type="password" id="rpassword" name="password"></br>
-            <input type="submit" />
-        </form>
-        <button id="tosignin">Switch to Sign in</button></br>
-        <button class="signout">Sign out</button>
-    </div>
     <div class="myform">
-        <h1 class="current-email"></h1>
-        <form action="" id="my-form">
-            <h1>Upload</h1>
-            <label for="title">Title:</label><br>
-            <input type="text" id="title" name="title"><br>
-            <label for="cap">Caption:</label><br>
-            <input type="text" id="cap" name="cap"></br>
-            <input type='file' id="file"></br>
-            <input type="submit"></br>
-        </form>
-        <button class="signout">Sign out</button>
+        <div class="form-area">
+            <h1 class="current-email"></h1>
+            <div class="close-upload">
+                <i class="fas fa-times"></i>
+            </div>
+            <form action="" id="my-form">
+                <h1>Upload</h1>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title"><br>
+                <label for="cap">Caption:</label>
+                <input type="text" id="cap" name="cap"></br>
+                <input type='file' id="file"></br>
+                <input type="submit"></br>
+            </form>
+            <button class="signout">Sign out</button>
+        </div>
+
     </div>
+
+    <div class="container">
+        <div class="login">
+            <h1>Sign in</h1>
+            <form action="" id="login-form">
+                <label for="Email">Email:</label><br>
+                <input type="text" id="lemail" name="email"><br>
+                <label for="Password">Password:</label><br>
+                <input type="password" id="lpassword" name="password"></br>
+                <input type="submit" />
+            </form>
+            <button id="tosignup">Switch to Sign up</button></br>
+            <button class="signout">Sign out</button>
+        </div>
+
+        <div class="register">
+            <h1>Sign up</h1>
+            <form action="" id="register-form">
+                <label for="Email">Email:</label><br>
+                <input type="text" id="remail" name="email"><br>
+                <label for="Password">Password:</label><br>
+                <input type="password" id="rpassword" name="password"></br>
+                <input type="submit" />
+            </form>
+            <button id="tosignin">Switch to Sign in</button></br>
+            <button class="signout">Sign out</button>
+        </div>
+
+        <div class="img-form">
+
+
+            <div class="list-of-image">
+                <div class="img-list">
+                    <img class="img">
+                    <label class="title">Title : </label>
+                    <input class="title-inp">
+                    <button class="update-metadata-btn">Update</button>
+                </div>
+            </div>
+            <button class="add-img">
+                Add Image
+            </button>
+
+        </div>
+
+    </div>
+
 
 
 

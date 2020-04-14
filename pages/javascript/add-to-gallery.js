@@ -6,11 +6,58 @@ var storage = firebase.storage();
 var storageRef = firebase.storage().ref();
 var imagesRef = storageRef.child('gallery');
 
+function listImgs() {
+    imagesRef.listAll().then(function(res) {
+        res.items.forEach(function(itemRef) {
+
+            itemRef.getDownloadURL().then(function(url) {
+                var ele = $(".img-list:last").clone();
+                console.log(ele);
+                $('.list-of-image').append(ele);
+                itemRef.getMetadata().then(function(metadata) {
+                    $('.loader-container').hide();
+                    console.log(metadata);
+                    ele.show();
+                    ele.children(".img").attr("src", url);
+                    ele.children(".title-inp").val(metadata['customMetadata']['title']);
+                    ele.children(".update-metadata-btn").click(function() {
+                        var newMetadata = {
+                            customMetadata: {
+                                'title': ele.children(".title-inp").val(),
+                            }
+
+                            // 'caption': '',
+                        }
+                        console.log(newMetadata);
+                        itemRef.updateMetadata(newMetadata).then(function() {
+                            console.log(itemRef.name);
+                            alert('Successfully Update');
+                            // itemRef.getMetadata().then(function(metadata) {
+                            //     ele.children(".title-inp").val(metadata['customMetadata']['title']);
+                            // });
+                        }).catch(function(err) {
+                            alert('Cannot Update');
+                            console.log(err);
+                        });
+
+
+                    });
+                    // Metadata now contains the metadata for 'images/forest.jpg'
+                }).catch(function(error) {
+                    console.log(error);
+                });
+
+            }).catch(function(err) {
+                console.log(err);
+            });
+        });
+    });
+}
 
 
 var upload = function(ref, file, title, caption) {
     console.log('Uploading . . .');
-    $(".myform").hide();
+    $(".img-form").hide();
     $(".loader-container").show();
     var date = new Date().valueOf();
     var dates = Date().valueOf().split(" ");
@@ -29,7 +76,7 @@ var upload = function(ref, file, title, caption) {
 
     thisRef.put(file, metadata).then(function(snapshot) {
         console.log('Uploaded a blob or file! to ' + thisRef);
-        $(".myform").show();
+        $(".img-form").show();
         $(".loader-container").hide();
         alert('Completed!');
 
@@ -39,37 +86,53 @@ var upload = function(ref, file, title, caption) {
         alert(error.message);
         console.log('Error');
         console.log(error);
-        $(".myform").show();
+        $(".img-form").show();
         $(".loader-container").hide();
     });
     console.log(file);
 };
 
+function signIn(email, password) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+        $('.login').hide();
+        $('.register').hide();
+        $('.img-form').show();
+
+        listImgs();
+        console.log('Logged in');
+    }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        alert('Error! ' + errorMessage);
+        $(".loader-container").hide();
+        $(".login").show();
+        // ...
+    });
+}
 
 $(document).ready(function() {
+    $('.img-list').hide();
+    console.log(firebase.auth().currentUser);
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-        .then(function() {
-            // Existing and future Auth states are now persisted in the current
-            // session only. Closing the window would clear any existing state even
-            // if a user forgets to sign out.
-            // ...
-            // New sign-in will be persisted with session persistence.
-            $(".myform").show();
-            $('.login').hide();
-            $('.register').hide();
-            return firebase.auth().signInWithEmailAndPassword(email, password);
 
-        })
-        .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        });
+
+
     $(".loader-container").hide();
-    $(".myform").hide();
+    $(".img-form").hide();
     $('.login').show();
     $('.register').hide();
+    $('.myform').hide();
+
+    //For DEBUG
+    // $('.login').hide();
+    // $('.register').hide();
+    // $('.img-form').show();
+    // $(".loader-container").hide();
+    // listImgs();
 
     $("#my-form").submit(function(e) {
         e.preventDefault();
@@ -80,6 +143,14 @@ $(document).ready(function() {
     });
     $("#register-form").submit(function(e) {
         e.preventDefault();
+    });
+
+
+    $('.close-upload').click(function() {
+        $('.myform').slideUp();
+    });
+    $('.add-img').click(function() {
+        $('.myform').slideDown();
     });
 
     $(document).on('submit', '#my-form', function() {
@@ -95,9 +166,6 @@ $(document).ready(function() {
 
             upload(imagesRef, file, title, caption);
         }
-
-
-
         return false;
     });
 
@@ -131,23 +199,8 @@ $(document).ready(function() {
         var email = $('#lemail').val();
         var password = $('#lpassword').val();
         $(".loader-container").show();
-        $("#login-form").hide();
-        firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-            $('.login').hide();
-            $('.register').hide();
-            $('myform').show();
-            $(".loader-container").hide();
-        }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
-            alert('Error! ' + errorMessage);
-            $(".loader-container").hide();
-            $("#login-form").show();
-            // ...
-        });
+        $(".login").hide();
+        signIn(email, password);
     });
 
 
@@ -170,7 +223,7 @@ $(document).ready(function() {
             alert('sign out!');
             $('.login').show();
             $('.register').hide();
-            $('.myform').hide();
+            $('.img-form').hide();
 
         }).catch(function(error) {
             alert('error! ' + error);

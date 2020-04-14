@@ -1,1 +1,104 @@
 @import url('loader.css');
+.container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.img-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+.update-metadata-btn {
+    border: 0px;
+    background-color: lightsalmon;
+    padding: 5px;
+}
+
+.img {
+    width: 200px;
+    padding-right: 10px;
+}
+
+input {
+    /* background-color: lightskyblue; */
+    border-style: groove;
+    margin: 5px;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.myform {
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    background-color: rgba(0, 0, 255, 0.432);
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-area {
+    background-color: lightblue;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 10px;
+    padding-left: 10vw;
+}
+
+.close-upload {
+    width: 30px;
+    height: 30px;
+    margin-left: 75vw;
+    background-color: lightcoral;
+    border-radius: 50px;
+    font-size: 20px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: color 1s;
+}
+
+.close-upload:hover {
+    color: lightgreen;
+    transition: color 1s;
+}
+
+.add-img {
+    background-color: salmon;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+    font-size: 30px;
+    padding: 10px;
+    transition: all 1s;
+}
+
+.add-img:hover {
+    background-color: cornflowerblue;
+    transition: all 1s;
+}
+
+.img-form {
+    display: flex;
+    flex-direction: column;
+}
