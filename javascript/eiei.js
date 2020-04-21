@@ -27,7 +27,7 @@ var camera = new THREE.PerspectiveCamera(
 );
 
 camera.position.z = 100;
-camera.position.x = 70;
+camera.position.x = 20;
 
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setClearColor("#e5e5e5");
@@ -73,8 +73,8 @@ loader.load(
 function createText(text, font) {
     var geometry = new THREE.TextGeometry(text.toString(), {
         font: font,
-        size: 16,
-        height: 5,
+        size: 5,
+        height: 0.5,
         curveSegments: 12,
     });
     var material = new THREE.MeshLambertMaterial({ color: 0xff7f50 });
@@ -90,7 +90,8 @@ var animate = function () {
     requestAnimationFrame(animate);
 
     num += 1;
-    if (myFont != undefined && myText != undefined) {
+    if (myFont != undefined && myText != undefined && num >= 60) {
+        num = 0;
         var roX = myText.rotation.x;
         myText.geometry.dispose();
         myText.material.dispose();
@@ -105,7 +106,6 @@ var animate = function () {
             " " +
             date["secs"];
         myText = new createText(str, myFont);
-        myText.rotation.x = roX + 0.02;
         scene.add(myText);
     }
     // text.rotation.x += 0.01;
