@@ -120,7 +120,7 @@ var onMouseMove = function (event) {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-    light.position.x = mouse.x * 100 + 80;
+    light.position.x = mouse.x * 100 + 30;
     light.position.y = mouse.y * 100;
     // console.log(mouse.x + " " + mouse.y);
 };
