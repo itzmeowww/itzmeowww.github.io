@@ -1,3 +1,88 @@
+var isMobile = false;
+if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    )
+) {
+    isMobile = true;
+}
+var heart = 1;
+$(function () {
+    var type = "canvas";
+    var two = new Two({
+        type: Two.Types[type],
+        fullscreen: true,
+        autostart: true,
+    }).appendTo(document.body);
+
+    var characters = [];
+
+    var gravity = new Two.Vector(0, 0.1);
+
+    var styles = {
+        family: "proxima-nova, sans-serif",
+        size: isMobile ? 20 : 50,
+        leading: 50,
+        weight: 900,
+    };
+
+    var currentText = "";
+
+    two.bind("resize", function () {
+        directions.translation.set(two.width / 2, two.height / 2);
+    }).bind("update", function () {
+        date = countUpFromDate("Apr 22, 2019 22:22:00");
+        var str =
+            date["days"] +
+            " " +
+            date["hours"] +
+            " " +
+            date["mins"] +
+            " " +
+            date["secs"];
+        if (currentText != str) {
+            add(str);
+            currentText = str;
+            var myTitle = "";
+            if (heart > 5) {
+                heart = 1;
+            }
+            for (var i = 0; i < heart; i++) {
+                myTitle += "❤️";
+            }
+            heart++;
+            myTitle += " | ItzMeOwww";
+            $("#title").text(myTitle);
+        }
+
+        for (var i = 0; i < characters.length; i++) {
+            var text = characters[i];
+            if (i == characters.length - 1) {
+            } else {
+                text.translation.addSelf(text.velocity);
+                text.velocity.addSelf(gravity);
+                if (text.velocity.y > 0 && text.translation.y > two.height) {
+                    two.scene.remove(text);
+                    characters.splice(i, 1);
+                }
+            }
+        }
+    });
+
+    function add(msg) {
+        var x = two.width / 2;
+        var y = two.height / 2;
+        var text = two.makeText(msg, x, y, styles);
+        text.size *= 2;
+        text.fill = "white";
+
+        text.velocity = new Two.Vector();
+        text.velocity.x = 0;
+        text.velocity.y = 0;
+        characters.push(text);
+    }
+});
+
 function countUpFromDate(date) {
     date = new Date(date).getTime();
     //console.log(date);
@@ -17,112 +102,3 @@ function countUpFromDate(date) {
         secs: secs,
     };
 }
-
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-);
-
-camera.position.z = 100;
-camera.position.x = 20;
-
-var renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setClearColor("#e5e5e5");
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-
-window.addEventListener("resize", () => {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-});
-
-var light = new THREE.PointLight(0xffffff, 1, 5000);
-var mouse = new THREE.Vector2();
-
-light.position.set(0, 0, 30);
-scene.add(light);
-
-var myText = undefined;
-
-var loader = new THREE.FontLoader();
-var myFont = undefined;
-loader.load(
-    "pages/font/Montserrat Black_Regular.json",
-    function (font) {
-        // do something with the font
-        myText = new createText("HI", font);
-        myFont = font;
-        scene.add(myText);
-    },
-
-    // onProgress callback
-    function (xhr) {
-        console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-    },
-
-    // onError callback
-    function (err) {
-        console.log("An error happened");
-    }
-);
-
-function createText(text, font) {
-    var geometry = new THREE.TextGeometry(text.toString(), {
-        font: font,
-        size: 5,
-        height: 0.5,
-        curveSegments: 12,
-    });
-    var material = new THREE.MeshLambertMaterial({ color: 0xff7f50 });
-    textMesh = new THREE.Mesh(geometry, material);
-    textMesh.rotation.x = 0;
-    textMesh.rotation.y = 0;
-    // console.log(textMesh);
-    return textMesh;
-}
-var num = 0;
-
-var animate = function () {
-    requestAnimationFrame(animate);
-
-    num += 1;
-    if (myFont != undefined && myText != undefined && num >= 60) {
-        num = 0;
-        var roX = myText.rotation.x;
-        myText.geometry.dispose();
-        myText.material.dispose();
-        scene.remove(myText);
-        date = countUpFromDate("Apr 22, 2019 22:22:00");
-        var str =
-            date["days"] +
-            " " +
-            date["hours"] +
-            " " +
-            date["mins"] +
-            " " +
-            date["secs"];
-        myText = new createText(str, myFont);
-        scene.add(myText);
-    }
-    // text.rotation.x += 0.01;
-
-    renderer.render(scene, camera);
-};
-
-animate();
-
-var onMouseMove = function (event) {
-    event.preventDefault();
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    light.position.x = mouse.x * 100 + 30;
-    light.position.y = mouse.y * 100;
-    // console.log(mouse.x + " " + mouse.y);
-};
-
-window.addEventListener("mousemove", onMouseMove);
