@@ -7,6 +7,9 @@ if (
     isMobile = true;
 }
 var heart = 1;
+var colors = ["snow", "coral"];
+var color = colors[Math.floor(Math.random() * colors.length)];
+console.log(color);
 $(function () {
     var type = "canvas";
     var two = new Two({
@@ -74,10 +77,10 @@ $(function () {
         var y = two.height / 2;
         var text = two.makeText(msg, x, y, styles);
         text.size *= 2;
-        text.fill = "white";
+        text.fill = color;
 
         text.velocity = new Two.Vector();
-        text.velocity.x = 0;
+        text.velocity.x = Math.random() * 2 - 1;
         text.velocity.y = 0;
         characters.push(text);
     }
