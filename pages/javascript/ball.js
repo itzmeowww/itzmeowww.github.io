@@ -65,7 +65,7 @@ var styles = {
     weight: 900,
 };
 
-var text = two.makeText("Hi", two.width / 2, two.height / 2, styles);
+var text = two.makeText("Hi!", two.width / 2, two.height / 2, styles);
 two.bind("resize", function () {
     circle.translation.set(two.width / 2, two.height / 2);
     text.translation.set(two.width / 2, two.height / 2);
