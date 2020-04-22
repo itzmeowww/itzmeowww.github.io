@@ -14,12 +14,15 @@ two.bind("resize", function () {
 }).bind("update", function () {
     if (
         circle.translation.x + force.x >= 0 &&
-        circle.translation.x + force.x <= two.width &&
+        circle.translation.x + force.x <= two.width
+    ) {
+        circle.translation.x += force.x;
+    }
+    if (
         circle.translation.y + force.y >= 0 &&
         circle.translation.y + force.y <= two.height
     ) {
-        circle.translation.addSelf(force);
-        console.log(force);
+        circle.translation.y += force.y;
     }
 });
 
