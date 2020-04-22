@@ -11,9 +11,7 @@ var colors = ["snow", "coral"];
 var color = colors[Math.floor(Math.random() * colors.length)];
 console.log(color);
 $(function () {
-    var type = "canvas";
     var two = new Two({
-        type: Two.Types[type],
         fullscreen: true,
         autostart: true,
     }).appendTo(document.body);
