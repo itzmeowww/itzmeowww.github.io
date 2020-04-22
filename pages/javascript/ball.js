@@ -24,17 +24,19 @@ function handleOrientation(event) {
 
 if (typeof DeviceMotionEvent.requestPermission === "function") {
     alert("HI thereee!");
-    DeviceMotionEvent.requestPermission().then((response) => {
-        if (response == "granted") {
-            window.addEventListener(
-                "deviceorientation",
-                handleOrientation,
-                true
-            );
-        }
-    }).catch(e){
-        alert(e);
-    };
+    DeviceMotionEvent.requestPermission()
+        .then((response) => {
+            if (response == "granted") {
+                window.addEventListener(
+                    "deviceorientation",
+                    handleOrientation,
+                    true
+                );
+            }
+        })
+        .catch((e) => {
+            alert(e);
+        });
 } else {
     alert("HI there?");
     console.log("HI");
