@@ -8,12 +8,12 @@ function handleOrientation(event) {
     // $("#show").text(str);
     if (beta != null && gamma != null) {
         if (beta == 0) force.y = 0;
-        else if (beta > 0) force.y = 1 / 2;
-        else force.y = -1 / 2;
+        else if (beta > 0) force.y = 1 / 20;
+        else force.y = -1 / 20;
 
         if (gamma == 0) force.x = 0;
-        else if (gamma > 0) force.x = 1 / 2;
-        else force.x = -1 / 2;
+        else if (gamma > 0) force.x = 1 / 20;
+        else force.x = -1 / 20;
         text.value = Math.round(beta) + " " + Math.round(gamma);
     } else {
         force.y = 1;
