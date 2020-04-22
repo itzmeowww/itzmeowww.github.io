@@ -21,11 +21,11 @@ function handleOrientation(event) {
     var f = 1 / 10;
     // $("#show").text(str);
     if (beta != null && gamma != null) {
-        if (beta == 0) force.y = 0;
+        if (Math.round(beta) == 0) force.y = 0;
         else if (beta > 0) force.y = f;
         else force.y = -f;
 
-        if (gamma == 0) force.x = 0;
+        if (Math.round(gamma) == 0) force.x = 0;
         else if (gamma > 0) force.x = f;
         else force.x = -f;
         text.value = Math.round(beta) + " " + Math.round(gamma);
