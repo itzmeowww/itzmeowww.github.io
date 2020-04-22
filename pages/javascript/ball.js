@@ -34,6 +34,7 @@ if (typeof DeviceMotionEvent.requestPermission === "function") {
         }
     });
 } else {
+    alert("HI there?");
     console.log("HI");
     window.addEventListener("deviceorientation", handleOrientation, true); // non iOS 13+
 }
