@@ -23,6 +23,7 @@ function handleOrientation(event) {
 }
 
 if (typeof DeviceMotionEvent.requestPermission === "function") {
+    alert("HI there!");
     DeviceMotionEvent.requestPermission().then((response) => {
         if (response == "granted") {
             window.addEventListener(
