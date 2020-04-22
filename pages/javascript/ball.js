@@ -1,3 +1,42 @@
+function handleOrientation(event) {
+    var absolute = event.absolute;
+    var alpha = event.alpha;
+    var beta = event.beta;
+    var gamma = event.gamma;
+    var str = absolute + " " + alpha + " " + beta + " " + gamma;
+
+    // $("#show").text(str);
+    if (beta != null && gamma != null) {
+        if (beta == 0) force.y = 0;
+        else if (beta > 0) force.y = 1 / 2;
+        else force.y = -1 / 2;
+
+        if (gamma == 0) force.x = 0;
+        else if (gamma > 0) force.x = 1 / 2;
+        else force.x = -1 / 2;
+        text.value = Math.round(beta) + " " + Math.round(gamma);
+    } else {
+        force.y = 1;
+        force.x = Math.random() * 1;
+    }
+    // console.log(force);
+}
+
+if (typeof DeviceMotionEvent.requestPermission === "function") {
+    DeviceMotionEvent.requestPermission().then((response) => {
+        if (response == "granted") {
+            window.addEventListener(
+                "deviceorientation",
+                handleOrientation,
+                true
+            );
+        }
+    });
+} else {
+    console.log("HI");
+    window.addEventListener("deviceorientation", handleOrientation, true); // non iOS 13+
+}
+
 var isMobile = false;
 if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -50,24 +89,3 @@ two.bind("resize", function () {
         circle.velocity.y *= -0.9;
     }
 });
-
-window.addEventListener("deviceorientation", handleOrientation, true);
-function handleOrientation(event) {
-    var absolute = event.absolute;
-    var alpha = event.alpha;
-    var beta = event.beta;
-    var gamma = event.gamma;
-    var str = absolute + " " + alpha + " " + beta + " " + gamma;
-    if (beta == 0) force.y = 0;
-    else if (beta > 0) force.y = 1 / 2;
-    else force.y = -1 / 2;
-
-    if (gamma == 0) force.x = 0;
-    else if (gamma > 0) force.x = 1 / 2;
-    else force.x = -1 / 2;
-    // $("#show").text(str);
-    if (beta != null && gamma != null) {
-        // text.value = Math.round(beta) + " " + Math.round(gamma);
-    }
-    // console.log(force);
-}
