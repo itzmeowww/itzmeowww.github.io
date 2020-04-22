@@ -23,8 +23,8 @@ function handleOrientation(event) {
 }
 
 if (typeof DeviceMotionEvent.requestPermission === "function") {
+    alert("Gently tap anywhere on screen to give permission :)");
     onclick = function () {
-        alert("Click!");
         DeviceMotionEvent.requestPermission()
             .then((response) => {
                 if (response == "granted") {
@@ -41,8 +41,6 @@ if (typeof DeviceMotionEvent.requestPermission === "function") {
     };
     $("body").click(onclick);
 } else {
-    alert("HI there?");
-    console.log("HI");
     window.addEventListener("deviceorientation", handleOrientation, true); // non iOS 13+
 }
 
