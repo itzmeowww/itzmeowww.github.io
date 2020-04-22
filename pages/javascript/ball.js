@@ -1,23 +1,37 @@
+function randColor() {
+    var colors = ["snow", "#FF8000"];
+    var borderColors = {
+        snow: "black",
+        "#FF8000": "orangered",
+    };
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    var colorPack = {
+        color: color,
+        borderColor: borderColors[color],
+    };
+    return colorPack;
+}
+
 function handleOrientation(event) {
     var absolute = event.absolute;
     var alpha = event.alpha;
     var beta = event.beta;
     var gamma = event.gamma;
     var str = absolute + " " + alpha + " " + beta + " " + gamma;
-
+    var f = 1 / 10;
     // $("#show").text(str);
     if (beta != null && gamma != null) {
         if (beta == 0) force.y = 0;
-        else if (beta > 0) force.y = 1 / 20;
-        else force.y = -1 / 20;
+        else if (beta > 0) force.y = f;
+        else force.y = -f;
 
         if (gamma == 0) force.x = 0;
-        else if (gamma > 0) force.x = 1 / 20;
-        else force.x = -1 / 20;
+        else if (gamma > 0) force.x = f;
+        else force.x = -f;
         text.value = Math.round(beta) + " " + Math.round(gamma);
     } else {
         force.y = 1;
-        force.x = Math.random() * 1;
+        force.x = 0;
     }
     // console.log(force);
 }
@@ -58,7 +72,10 @@ var two = new Two({
     autostart: true,
 }).appendTo(document.body);
 var force = new Two.Vector();
+
 var circle = two.makeCircle(72, 100, 50);
+var radius = circle._radius;
+
 circle.velocity = new Two.Vector(0, 0);
 circle.fill = "#FF8000";
 circle.stroke = "orangered"; // Accepts all valid css color
@@ -80,19 +97,31 @@ two.bind("resize", function () {
     circle.velocity.addSelf(force);
     // console.log(circle.velocity);
     if (
-        circle.translation.x + circle.velocity.x >= 0 &&
-        circle.translation.x + circle.velocity.x <= two.width
+        circle.translation.x - radius + circle.velocity.x >= 0 &&
+        circle.translation.x + radius + circle.velocity.x <= two.width
     ) {
         circle.translation.x += circle.velocity.x;
     } else {
+        if (Math.abs(circle.velocity.x) > 0.5) {
+            var colorPack = randColor();
+            circle.fill = colorPack["color"];
+            circle.stroke = colorPack["borderColor"];
+        }
+
         circle.velocity.x *= -0.9;
     }
     if (
-        circle.translation.y + circle.velocity.y >= 0 &&
-        circle.translation.y + circle.velocity.y <= two.height
+        circle.translation.y - radius + circle.velocity.y >= 0 &&
+        circle.translation.y + radius + circle.velocity.y <= two.height
     ) {
         circle.translation.y += circle.velocity.y;
     } else {
+        if (Math.abs(circle.velocity.y) > 0.5) {
+            var colorPack = randColor();
+            circle.fill = colorPack["color"];
+            circle.stroke = colorPack["borderColor"];
+        }
+
         circle.velocity.y *= -0.9;
     }
 });
