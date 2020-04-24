@@ -115,6 +115,7 @@ function handleSwipeRight(event) {
     }
 }
 $(document).ready(function () {
+    $.mobile.loading().hide();
     AddTwo();
     $("body").keydown(handleKeydown);
 
