@@ -1,6 +1,6 @@
-@import url('font.css');
-@import url('loader.css');
-@import url('return.css');
+@import url("font.css");
+@import url("loader.css");
+@import url("return.css");
 .title {
     display: flex;
     text-align: center;
@@ -8,7 +8,7 @@
     align-items: center;
     position: relative;
     /* background-color: coral; */
-    font-family: 'Open Sans', sans-serif;
+
     height: 100vh;
     font-size: 20px;
 }
@@ -63,6 +63,13 @@
         /* height: 125px; */
         height: unset;
     }
+    .fullImg {
+        height: unset;
+        width: 80vw;
+    }
+    .fullImgData {
+        height: 5vh;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -79,6 +86,13 @@
         height: 250px;
         width: unset;
     }
+    .fullImg {
+        width: unset;
+        height: 80vh;
+    }
+    .fullImgData {
+        height: 10vh;
+    }
 }
 
 .img-container {
@@ -93,7 +107,7 @@
     height: 100%;
     width: 100%;
     background-color: rgb(0, 0, 0, 0.8);
-    font-family: 'Krub', sans-serif;
+    font-family: "Krub", sans-serif;
     font-weight: 300;
     z-index: 2;
     transition: background-color 0.5s;
@@ -101,7 +115,26 @@
     color: snow;
 }
 
+.fullImgView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.5);
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    z-index: 3;
+}
 
+.fullImgData {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 /* .my-img:hover .text {
     display: flex;
     justify-content: center;
@@ -113,4 +146,9 @@
 .secret {
     text-decoration: none;
     color: black;
+}
+
+body {
+    margin: 0px;
+    font-family: "Open Sans", sans-serif;
 }

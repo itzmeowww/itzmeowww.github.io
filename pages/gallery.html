@@ -1,62 +1,73 @@
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/gallery.css" />
+        <script
+            src="https://kit.fontawesome.com/0a488017f5.js"
+            crossorigin="anonymous"
+        ></script>
+        <title>Win's Gallery</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/gallery.css">
-    <script src="https://kit.fontawesome.com/0a488017f5.js" crossorigin="anonymous"></script>
-    <title>Win's Gallery</title>
-</head>
-
-<body>
-    <div class="return-btn">
-        <a class="return-link" href="../#div2"><i class="fas fa-arrow-left"></i></a>
-    </div>
-    <div class="title">
-        <h1>ItzMeOwww's G<a href="add-to-gallery.html" class="secret">a</a>llery</h1>
-    </div>
-
-    <div class="loader-container">
-        <div class="loader">
-
-        </div>
-    </div>
-
-    <div class="gallery">
-
-        <div class="my-img">
-            <div class="text">
-                <h3>Text</h3>
+    <body>
+        <div class="fullImgView">
+            <div class="fullImgLoader"></div>
+            <div class="fullImgContainer">
+                <img class="fullImg" />
+                <div class="fullImgData">
+                    <div class="fullImgTitle"></div>
+                </div>
             </div>
-            <div class="img-container"><img class="img"></div>
         </div>
-    </div>
+        <div class="return-btn">
+            <a class="return-link" href="../#div2"
+                ><i class="fas fa-arrow-left"></i
+            ></a>
+        </div>
+        <div class="title">
+            <h1>
+                ItzMeOwww's G<a href="add-to-gallery.html" class="secret">a</a
+                >llery
+            </h1>
+        </div>
 
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
 
-    <!-- Firebase Services -->
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        <div class="gallery">
+            <div class="my-img">
+                <!-- <div class="text">
+                <h3>Text</h3>
+            </div> -->
+                <div class="img-container"><img class="img" /></div>
+            </div>
+        </div>
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+        <!-- Firebase Services -->
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-performance.js"></script>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 
+        <!-- Add Firebase products that you want to use -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-performance.js"></script>
 
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <script src="javascript/firebase.js"></script>
-    <script src="javascript/gallery.js"></script>
-</body>
-
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="javascript/two.min.js"></script>
+        <script src="javascript/tween.js"></script>
+        <script src="javascript/firebase.js"></script>
+        <script src="javascript/gallery.js"></script>
+    </body>
 </html>

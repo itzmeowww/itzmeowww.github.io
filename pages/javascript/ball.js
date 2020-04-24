@@ -47,6 +47,7 @@ if (typeof DeviceMotionEvent.requestPermission === "function") {
                         handleOrientation,
                         true
                     );
+                    $("body").click(function () {});
                 }
             })
             .catch((e) => {
