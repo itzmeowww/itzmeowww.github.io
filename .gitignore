@@ -10,3 +10,6 @@ react
 .prettierrc.json
 .vscode
 test
+pages/tuner.html
+pages/javascript/tuner2.js
+pages/javascript/tuner.js

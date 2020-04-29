@@ -31,17 +31,27 @@ function showFullImg(id) {
     id = currentId;
     console.log(id);
     $(".fullImgView").show();
-    $(".fullImgLoader").show();
+    $(".loader-container").show();
     $(".fullImgView")
         .children(".fullImgContainer")
         .children(".fullImg")
         .attr("src", imgSrc[id]);
 
+    try {
+        var dates = imgMeta[id]["date"].split(" ");
+        console.log(dates);
+        var date = dates[1] + " " + dates[2] + " " + dates[3];
+        // $(".fullImgPostedDate").text(date);
+    } catch (error) {
+        console.log(error);
+        // $(".fullImgPostedDate").text("");
+    }
+
     $(".fullImgTitle").text(imgMeta[id]["title"]);
 
     $(".fullImg").on("load", function () {
         $(".fullImgContainer").show();
-        $(".fullImgLoader").hide();
+        $(".loader-container").hide();
     });
 
     $(".fullImgView").click(function () {
@@ -85,7 +95,6 @@ function AddTwo() {
 }
 
 $(".return-btn").hide();
-var myId = 0;
 
 function handleKeydown(event) {
     console.log(event.keyCode);
@@ -116,7 +125,7 @@ function handleSwipeRight(event) {
 }
 $(document).ready(function () {
     $.mobile.loading().hide();
-    AddTwo();
+    // AddTwo();
     $("body").keydown(handleKeydown);
 
     $(".my-img").hide();
@@ -179,9 +188,11 @@ $(document).ready(function () {
                                     .attr("src", url);
                                 elem.children(".text").hide();
 
-                                $(".loader-container").hide();
-                                $(".title").show();
-                                $(".title").addClass("fold");
+                                if (nowId == 5) {
+                                    $(".loader-container").hide();
+                                    $(".title").show();
+                                    $(".title").addClass("fold");
+                                }
 
                                 if (!touch) {
                                     console.log("Add hover");
