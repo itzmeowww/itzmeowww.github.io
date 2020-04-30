@@ -123,8 +123,8 @@ function handleSwipeRight(event) {
         showFullImg(currentId + 1);
     }
 }
+$.mobile.loading().hide();
 $(document).ready(function () {
-    $.mobile.loading().hide();
     // AddTwo();
     $("body").keydown(handleKeydown);
 
@@ -136,7 +136,7 @@ $(document).ready(function () {
     $(".fullImgView").on("swiperight", handleSwipeRight);
 
     $(".fullImgLoader").hide();
-    var colors = ["snow", "grays", "lightblue", "azure"];
+    var colors = ["snow", "grays", "lightblue"];
     var color = colors[Math.floor(Math.random() * colors.length)];
     // console.log(color);
     $("body").css("background-color", color);
@@ -186,6 +186,15 @@ $(document).ready(function () {
                                 elem.children(".img-container")
                                     .children(".img")
                                     .attr("src", url);
+
+                                elem.children(".img-container")
+                                    .children(".img")
+                                    .attr(
+                                        "title",
+                                        // metadata["customMetadata"]["title"]
+                                        ""
+                                    );
+
                                 elem.children(".text").hide();
 
                                 if (nowId == 5) {
