@@ -123,8 +123,13 @@ function handleSwipeRight(event) {
         showFullImg(currentId + 1);
     }
 }
+$(document).on("mobileinit", function () {
+    $.mobile.loader.prototype.options.disabled = true;
+});
+
 $.mobile.loading().hide();
 $(document).ready(function () {
+    $.mobile.loading().hide();
     // AddTwo();
     $("body").keydown(handleKeydown);
 
