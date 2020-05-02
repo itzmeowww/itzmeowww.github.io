@@ -172,7 +172,7 @@ function animate(time) {
             }
             camera.rotation.y = cameraAngle;
         }
-        let rotate_speed = touch ? 0.06 : 0.12;
+        let rotate_speed = touch ? 0.08 : 0.12;
 
         if (camera.rotation.y < cameraAngle) {
             camera.rotation.y += rotate_speed;
@@ -252,7 +252,7 @@ function animate(time) {
                 pos.x = Math.round(block.position.x + speed.x);
                 pos.y = Math.round(block.position.y + speed.y);
             } else {
-                let divider = touch ? 20 : 10;
+                let divider = touch ? 15 : 10;
                 block.position.x += speed.x / divider;
                 block.position.y += speed.y / divider;
             }
