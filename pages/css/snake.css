@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+canvas {
+    display: block;
+}
+#score {
+    position: fixed;
+    z-index: 2;
+    margin: 20px;
+}
