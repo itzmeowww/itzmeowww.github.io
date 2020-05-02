@@ -25,7 +25,6 @@ var song = new Howl({
         console.log("Finished!");
     },
 });
-song.play();
 
 //set up three.js
 var renderer = new THREE.WebGLRenderer();
@@ -65,6 +64,7 @@ gridHelper.receiveShadow = false;
 scene.add(gridHelper);
 
 let pause = false;
+let reset = false;
 let score = 0;
 const snake = [];
 const foods = [];
@@ -153,7 +153,6 @@ camera.rotation.x = Math.PI / 2;
 camera.rotation.y = 0;
 let cameraAngle = 0;
 createSnakeBlock(0, 0, 0, 0);
-
 createFood(0xfe0000, 0, 2);
 function animate(time) {
     requestAnimationFrame(animate);
@@ -196,13 +195,13 @@ function animate(time) {
 
                 foods.forEach((food) => {
                     if (
-                        Math.abs(food.position.x - block.position.x) <= 0.05 &&
-                        Math.abs(food.position.y - block.position.y) <= 0.05
+                        Math.abs(food.position.x - block.position.x) <= 0.005 &&
+                        Math.abs(food.position.y - block.position.y) <= 0.005
                     ) {
                         // console.log(food);
                         foods.splice(foods.indexOf(food), 1);
-                        // food.geometry.dispose();
-                        // food.material.dispose();
+                        food.geometry.dispose();
+                        food.material.dispose();
                         scene.remove(food);
                         collect_item.play();
                         createTail++;
@@ -211,6 +210,24 @@ function animate(time) {
                         createFood();
                     }
                 });
+
+                for (let ii = 1; ii < snake.length; ii++) {
+                    // console.log(snake[ii].position);
+                    // console.log(block.position);
+                    if (
+                        Math.abs(
+                            snake[ii].block.position.x - block.position.x
+                        ) <= 0.05 &&
+                        Math.abs(
+                            snake[ii].block.position.y - block.position.y
+                        ) <= 0.05
+                    ) {
+                        $("#gameOver").show();
+                        $("#gameOverText").text("Your Score : " + score);
+                        pause = true;
+                        reset = true;
+                    }
+                }
                 // camera.lookAt(pos.x, pos.y, 1);
             }
             if (
@@ -295,6 +312,10 @@ function getSpeed(add) {
     snakeSpeed.y = speeds[speedIdx].y;
 }
 function onKeypress(event) {
+    if (reset) {
+        resetGame();
+    }
+
     // console.log(event.keyCode);
     if (event.keyCode == 97) {
         cameraAngle += Math.PI / 2;
@@ -321,7 +342,11 @@ function onKeypress(event) {
         // snakeSpeed.y = -1;
     } else if (event.keyCode == 32) {
         pause = !pause;
-        pause ? song.stop() : song.play();
+        if (pause) song.stop();
+        else {
+            song.stop();
+            song.play();
+        }
     } else if (event.keyCode == 113) {
         // createTail++;
         //console.log(createTail);
@@ -330,14 +355,42 @@ function onKeypress(event) {
     if (event.keyCode != 32) {
         if (pause) {
             pause = false;
+            song.stop();
             song.play();
         }
     }
 }
 window.addEventListener("resize", onWindowResize);
 window.addEventListener("keypress", onKeypress);
-
+$("#gameOver").hide();
+function resetGame() {
+    reset = false;
+    $("#gameOver").hide();
+    foods.forEach((food) => {
+        scene.remove(food);
+    });
+    snake.forEach((block) => {
+        scene.remove(block.block);
+    });
+    foods.length = 0;
+    snake.length = 0;
+    score = 0;
+    pause = false;
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 1;
+    camera.rotation.x = Math.PI / 2;
+    camera.rotation.y = 0;
+    cameraAngle = 0;
+    snakeSpeed.x = 0;
+    snakeSpeed.y = 0;
+    speedIdx = 0;
+    createSnakeBlock(0, 0, 0, 0);
+    createFood(0xfe0000, 0, 2);
+}
 $(document).ready(function () {
+    $("#gameOver").hide();
+    $("#gameOver").click(resetGame);
     if (touch) {
         alert("Please gently swipe left and right to control");
     } else alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
