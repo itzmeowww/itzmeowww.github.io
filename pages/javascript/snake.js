@@ -301,6 +301,41 @@ function onKeypress(event) {
 }
 window.addEventListener("resize", onWindowResize);
 window.addEventListener("keypress", onKeypress);
+var touch = false;
+if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    )
+) {
+    touch = true;
+}
 $(document).ready(function () {
-    alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
+    if (touch) {
+        alert("Please gently swipe left and right to control");
+    } else alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
 });
+
+try {
+    $(document).on("mobileinit", function () {
+        $.mobile.loader.prototype.options.disabled = true;
+    });
+
+    $.mobile.loading().hide();
+} catch (error) {
+    console.log(error);
+}
+
+function handleSwipeLeft(event) {
+    cameraAngle += Math.PI / 2;
+    getSpeed(-1);
+}
+function handleSwipeRight(event) {
+    cameraAngle -= Math.PI / 2;
+    getSpeed(1);
+}
+function handleSwipeUp(event) {
+    getSpeed(0);
+}
+$(window).on("swipeleft", handleSwipeLeft);
+$(window).on("swiperight", handleSwipeRight);
+// $(window).on("swipeup", handleSwipeUp);
