@@ -1,3 +1,4 @@
+@import url("font.css");
 body {
     margin: 0;
 }
@@ -11,4 +12,8 @@ canvas {
 }
 .ui-page {
     outline: none;
+}
+html {
+    background-color: lightblue;
+    font-family: "Open Sans", sans-serif;
 }

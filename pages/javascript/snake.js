@@ -1,5 +1,24 @@
 import * as THREE from "./build/three.module.js";
 
+var collect_item = new Howl({
+    src: ["sound/collect_item.mp3"],
+    loop: false,
+    volume: 0.5,
+    onend: function () {
+        console.log("Finished!");
+    },
+});
+
+var song = new Howl({
+    src: ["sound/theme_song.mp3"],
+    loop: true,
+    volume: 0.5,
+    onend: function () {
+        console.log("Finished!");
+    },
+});
+song.play();
+
 //set up three.js
 var renderer = new THREE.WebGLRenderer();
 var scene = new THREE.Scene();
@@ -175,6 +194,7 @@ function animate(time) {
                         // food.geometry.dispose();
                         // food.material.dispose();
                         scene.remove(food);
+                        collect_item.play();
                         createTail++;
                         score++;
                         $("#score").text("SCORE : " + score);
@@ -290,13 +310,17 @@ function onKeypress(event) {
         // snakeSpeed.y = -1;
     } else if (event.keyCode == 32) {
         pause = !pause;
+        pause ? song.stop() : song.play();
     } else if (event.keyCode == 113) {
         // createTail++;
         //console.log(createTail);
     }
 
     if (event.keyCode != 32) {
-        if (pause) pause = false;
+        if (pause) {
+            pause = false;
+            song.play();
+        }
     }
 }
 window.addEventListener("resize", onWindowResize);
