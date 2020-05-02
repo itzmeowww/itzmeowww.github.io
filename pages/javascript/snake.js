@@ -1,4 +1,12 @@
 import * as THREE from "./build/three.module.js";
+var touch = false;
+if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    )
+) {
+    touch = true;
+}
 
 var collect_item = new Howl({
     src: ["sound/collect_item.mp3"],
@@ -164,10 +172,12 @@ function animate(time) {
             }
             camera.rotation.y = cameraAngle;
         }
+        let rotate_speed = touch ? 0.06 : 0.12;
+
         if (camera.rotation.y < cameraAngle) {
-            camera.rotation.y += 0.12;
+            camera.rotation.y += rotate_speed;
         } else if (camera.rotation.y > cameraAngle) {
-            camera.rotation.y -= 0.12;
+            camera.rotation.y -= rotate_speed;
         }
 
         let bsx, bsy;
@@ -242,8 +252,9 @@ function animate(time) {
                 pos.x = Math.round(block.position.x + speed.x);
                 pos.y = Math.round(block.position.y + speed.y);
             } else {
-                block.position.x += speed.x / 10;
-                block.position.y += speed.y / 10;
+                let divider = isMobile ? 20 : 10;
+                block.position.x += speed.x / divider;
+                block.position.y += speed.y / divider;
             }
         }
     }
@@ -325,18 +336,12 @@ function onKeypress(event) {
 }
 window.addEventListener("resize", onWindowResize);
 window.addEventListener("keypress", onKeypress);
-var touch = false;
-if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-    )
-) {
-    touch = true;
-}
+
 $(document).ready(function () {
     if (touch) {
         alert("Please gently swipe left and right to control");
     } else alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
+    song.play();
 });
 
 try {
