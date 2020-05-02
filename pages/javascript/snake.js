@@ -269,7 +269,7 @@ function animate(time) {
                 pos.x = Math.round(block.position.x + speed.x);
                 pos.y = Math.round(block.position.y + speed.y);
             } else {
-                let divider = touch ? 15 : 10;
+                let divider = touch ? 10 : 10;
                 block.position.x += speed.x / divider;
                 block.position.y += speed.y / divider;
             }
