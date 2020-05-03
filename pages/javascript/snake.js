@@ -8,12 +8,20 @@ if (
     touch = true;
 }
 
+let soundReady = 0;
+
 var collect_item = new Howl({
     src: ["sound/collect_item.mp3"],
     loop: false,
     volume: 0.5,
     onend: function () {
         console.log("Finished!");
+    },
+    onload: function () {
+        soundReady++;
+        if (soundReady == 2) {
+            ready();
+        }
     },
 });
 
@@ -23,6 +31,12 @@ var song = new Howl({
     volume: 0.5,
     onend: function () {
         console.log("Finished!");
+    },
+    onload: function () {
+        soundReady++;
+        if (soundReady == 2) {
+            ready();
+        }
     },
 });
 
@@ -150,7 +164,7 @@ camera.position.x = 0;
 camera.position.y = 0;
 camera.position.z = 1;
 camera.rotation.x = Math.PI / 2;
-camera.rotation.y = 0;
+
 let cameraAngle = 0;
 createSnakeBlock(0, 0, 0, 0);
 createFood(0xfe0000, 0, 2);
@@ -315,6 +329,11 @@ function onKeypress(event) {
     if (reset) {
         resetGame();
     }
+    if (instruct) {
+        instruct = false;
+        $("#instruction").hide();
+        song.play();
+    }
 
     // console.log(event.keyCode);
     if (event.keyCode == 97) {
@@ -378,7 +397,7 @@ function resetGame() {
     pause = false;
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 1;
+
     camera.rotation.x = Math.PI / 2;
     camera.rotation.y = 0;
     cameraAngle = 0;
@@ -391,10 +410,7 @@ function resetGame() {
 $(document).ready(function () {
     $("#gameOver").hide();
     $("#gameOver").click(resetGame);
-    if (touch) {
-        alert("Please gently swipe left and right to control");
-    } else alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
-    song.play();
+    $("#instruction").hide();
 });
 
 try {
@@ -421,3 +437,26 @@ function handleSwipeUp(event) {
 $(window).on("swipeleft", handleSwipeLeft);
 $(window).on("swiperight", handleSwipeRight);
 // $(window).on("swipeup", handleSwipeUp);
+let instruct = false;
+function ready() {
+    $(".loader-container").hide();
+    $("#instruction").show();
+    instruct = true;
+    if (touch) {
+        $("#instruction_text").text("Swipe Left and Right to control");
+    } else {
+        $("#instruction_text").text(
+            "Use A,W,D to control, Use Spacebar to pause"
+        );
+    }
+    $("#instruction").click(function () {
+        instruct = false;
+        $("#instruction").hide();
+        song.play();
+    });
+
+    // if (touch) {
+    //     alert("Please gently swipe left and right to control");
+    // } else alert("W,A,D : control , space : pause\nTHIS IS BETA VERSION ;)");
+    // song.play();
+}
