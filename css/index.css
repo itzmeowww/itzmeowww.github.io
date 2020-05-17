@@ -1,18 +1,17 @@
 :root {
-    --bg-1: #0dceda;
-    --bg-2: #76d3df;
+    --bg-1: lightblue;
+    --bg-2: lightblue;
     --bg-3: lightblue;
-    --bg-4: #ebfffa;
+    --bg-4: lightblue;
 }
-
 
 /* Google Font  */
 
-@import url('pages/css/font.css');
+@import url("pages/css/font.css");
 
 /* Pulse Loader */
 
-@import url('pages/css/loader.css');
+@import url("pages/css/loader.css");
 @media screen and (min-width: 0px) {
     .name-container {
         background-color: var(--bg-4);
@@ -31,7 +30,7 @@
         transition: width, height, color, background-color 0.5s;
         transition: font-size 0.5s;
     }
-    .social-media-icons>.btn {
+    .social-media-icons > .btn {
         font-size: 25px;
     }
     .social-media {
@@ -98,7 +97,7 @@
         transition: width, height, color, background-color 0.5s;
         transition: font-size 0.5s;
     }
-    .social-media-icons>.btn {
+    .social-media-icons > .btn {
         font-size: 30px;
     }
     .social-media {
@@ -158,7 +157,6 @@
     margin-top: 35vh;
 }
 
-
 /* .name-container-text-group :hover {
     animation: text-animation 1s;
     animation-iteration-count: 1;
@@ -183,7 +181,6 @@
     }
 }
 
-
 /* @media only screen and (min-width: 850px) {} */
 
 .name-container {
@@ -203,7 +200,7 @@
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 html,
@@ -236,7 +233,6 @@ body::-webkit-scrollbar-thumb {
     background-color: darkgrey;
     outline: 1px solid slategrey;
 }
-
 
 /* Style buttons */
 
@@ -285,41 +281,41 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     align-items: center;
     background-color: black;
-    font-family: 'Prompt', sans-serif;
-    padding-bottom: 1rem;
+    font-family: "Prompt", sans-serif;
+    padding-bottom: 5px;
 }
 
-.social-media>.social-media-icons>.btn {
+.social-media > .social-media-icons > .btn {
     margin-left: 0.7rem;
     margin-right: 0.7rem;
     margin-top: 0vh;
     background-color: black;
 }
 
-.social-media>.social-media-icons>.btn>.btn-icon>.icon {
+.social-media > .social-media-icons > .btn > .btn-icon > .icon {
     color: snow;
 }
 
-.social-media>.social-media-icons>.btn>.btn-icon>.icon:hover {
+.social-media > .social-media-icons > .btn > .btn-icon > .icon:hover {
     color: lightgreen;
 }
 
-.social-media>.soc-title {
+.social-media > .soc-title {
     margin: 1.5rem;
-    letter-spacing: 0.5ex;
-    font-family: 'Sarabun', sans-serif;
+    letter-spacing: 0.3ex;
+    font-family: "Sarabun", sans-serif;
     color: snow;
     transition: letter-spacing 1s, color 1s;
     cursor: pointer;
 }
 
-.social-media>.soc-title:hover {
+.social-media > .soc-title:hover {
     letter-spacing: 0ex;
     color: palegreen;
     transition: letter-spacing 1s, color 1s;
 }
 
-.social-media>.social-media-icons {
+.social-media > .social-media-icons {
     margin-top: 0vh;
     margin-bottom: 1rem;
 }
@@ -330,7 +326,6 @@ body::-webkit-scrollbar-thumb {
     flex-direction: row;
     align-items: center;
 }
-
 
 /* Darker background on mouse-over */
 
@@ -344,7 +339,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 @keyframes btn-down-ani {
-    0% {}
+    0% {
+    }
 }
 
 .me-container {
@@ -402,7 +398,7 @@ body::-webkit-scrollbar-thumb {
 .me-right {
     height: 100vh;
     transition: width 1s;
-    background-color: lightblue;
+    background-color: darkslateblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -422,7 +418,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     justify-items: center;
     justify-content: center;
-    font-family: 'Sarabun', sans-serif;
+    font-family: "Sarabun", sans-serif;
     font-size: 20px;
     margin: 10px;
     text-decoration: none;
