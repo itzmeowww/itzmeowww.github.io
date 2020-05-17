@@ -103,7 +103,8 @@ two.bind("resize", function () {
     ) {
         circle.translation.x += circle.velocity.x;
     } else {
-        if (Math.abs(circle.velocity.x) > 0.5) {
+        // console.log(circle.velocity.x);
+        if (Math.abs(circle.velocity.x) > 1) {
             var colorPack = randColor();
             circle.fill = colorPack["color"];
             circle.stroke = colorPack["borderColor"];
@@ -117,7 +118,8 @@ two.bind("resize", function () {
     ) {
         circle.translation.y += circle.velocity.y;
     } else {
-        if (Math.abs(circle.velocity.y) > 0.5) {
+        // console.log(circle.velocity.y);
+        if (Math.abs(circle.velocity.y) > 1) {
             var colorPack = randColor();
             circle.fill = colorPack["color"];
             circle.stroke = colorPack["borderColor"];
