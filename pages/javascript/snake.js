@@ -1,12 +1,25 @@
 import * as THREE from "./build/three.module.js";
 var touch = false;
-if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-    )
-) {
-    touch = true;
+
+function is_touch_device() {
+    try {
+        document.createEvent("TouchEvent");
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
+
+// alert(is_touch_device());
+touch = is_touch_device();
+// if (
+//     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+//         navigator.userAgent
+//     )
+// ) {
+//     touch = true;
+//     alert(touch);
+// }
 
 let soundReady = 0;
 
@@ -15,7 +28,7 @@ var collect_item = new Howl({
     loop: false,
     volume: 0.5,
     onend: function () {
-        console.log("Finished!");
+        //console.log("Finished!");
     },
     onload: function () {
         soundReady++;
@@ -30,7 +43,7 @@ var song = new Howl({
     loop: true,
     volume: 0.5,
     onend: function () {
-        console.log("Finished!");
+        //console.log("Finished!");
     },
     onload: function () {
         soundReady++;
@@ -167,7 +180,7 @@ camera.rotation.x = Math.PI / 2;
 
 let cameraAngle = 0;
 createSnakeBlock(0, 0, 0, 0);
-createFood(0xfe0000, 0, 2);
+createFood(0x00fe00, 0, 2);
 function animate(time) {
     requestAnimationFrame(animate);
 
@@ -335,8 +348,8 @@ function onKeypress(event) {
         song.play();
     }
 
-    // console.log(event.keyCode);
-    if (event.keyCode == 97) {
+    //console.log(event.keyCode);
+    if (event.code == "KeyA") {
         cameraAngle += Math.PI / 2;
         // while (cameraAngle > Math.PI * 2) {
         //     cameraAngle -= Math.PI * 2;
@@ -344,7 +357,7 @@ function onKeypress(event) {
         // snakeSpeed.x = -1;
         // snakeSpeed.y = 0;
         getSpeed(-1);
-    } else if (event.keyCode == 100) {
+    } else if (event.code == "KeyD") {
         cameraAngle -= Math.PI / 2;
         getSpeed(1);
         // while (cameraAngle < 0) {
@@ -352,23 +365,23 @@ function onKeypress(event) {
         // }
         // snakeSpeed.x = 1;
         // snakeSpeed.y = 0;
-    } else if (event.keyCode == 119) {
+    } else if (event.code == "KeyW") {
         getSpeed(0);
         // snakeSpeed.x = 0;
         // snakeSpeed.y = 1;
-    } else if (event.keyCode == 115) {
-        // snakeSpeed.x = 0;
-        // snakeSpeed.y = -1;
-    } else if (event.keyCode == 32) {
+    } else if (event.code == "Space") {
         pause = !pause;
         if (pause) song.stop();
         else {
             song.stop();
             song.play();
         }
-    } else if (event.keyCode == 113) {
+    } else if (event.keyCode == 113 && false) {
         // createTail++;
         //console.log(createTail);
+    } else if (event.keyCode == 115 && false) {
+        // snakeSpeed.x = 0;
+        // snakeSpeed.y = -1;
     }
 
     if (event.keyCode != 32) {
@@ -405,7 +418,7 @@ function resetGame() {
     snakeSpeed.y = 0;
     speedIdx = 0;
     createSnakeBlock(0, 0, 0, 0);
-    createFood(0xfe0000, 0, 2);
+    createFood(0x00fe00, 0, 2);
 }
 $(document).ready(function () {
     $("#gameOver").hide();
@@ -424,16 +437,24 @@ try {
 }
 
 function handleSwipeLeft(event) {
+    if (instruct) {
+        instruct = false;
+        $("#instruction").hide();
+        song.play();
+    }
     cameraAngle += Math.PI / 2;
     getSpeed(-1);
 }
 function handleSwipeRight(event) {
+    if (instruct) {
+        instruct = false;
+        $("#instruction").hide();
+        song.play();
+    }
     cameraAngle -= Math.PI / 2;
     getSpeed(1);
 }
-function handleSwipeUp(event) {
-    getSpeed(0);
-}
+
 $(window).on("swipeleft", handleSwipeLeft);
 $(window).on("swiperight", handleSwipeRight);
 // $(window).on("swipeup", handleSwipeUp);
