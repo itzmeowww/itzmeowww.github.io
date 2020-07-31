@@ -30,6 +30,7 @@
         transition: width, height, color, background-color 0.5s;
         transition: font-size 0.5s;
     }
+
     .social-media-icons > .btn {
         font-size: 25px;
     }
@@ -247,7 +248,11 @@ body::-webkit-scrollbar-thumb {
 
 .btn-icon {
     display: flex;
+    align-self: center;
+
     justify-content: space-around;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .btn-sha-right-down {
@@ -293,11 +298,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .social-media > .social-media-icons > .btn > .btn-icon > .icon {
-    color: snow;
+    margin-top: 0px;
+    transition: margin-top 0.5s;
 }
 
 .social-media > .social-media-icons > .btn > .btn-icon > .icon:hover {
-    color: lightgreen;
+    margin-top: -5px;
 }
 
 .social-media > .soc-title {
@@ -324,7 +330,10 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    align-self: center;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Darker background on mouse-over */
