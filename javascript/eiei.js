@@ -14,7 +14,7 @@ $(function () {
     var two = new Two({
         fullscreen: true,
         autostart: true,
-    }).appendTo(document.body);
+    });
 
     var characters = [];
 
