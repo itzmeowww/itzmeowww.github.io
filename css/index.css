@@ -54,6 +54,7 @@
     .me-right:hover {
         width: 100vw;
     }
+
 }
 
 @media screen and (min-width: 440px) {
@@ -249,7 +250,7 @@ body::-webkit-scrollbar-thumb {
 .btn-icon {
     display: flex;
     align-self: center;
-
+    height: 2rem;
     justify-content: space-around;
     margin-top: auto;
     margin-bottom: auto;

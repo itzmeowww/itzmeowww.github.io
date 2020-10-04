@@ -61,6 +61,13 @@ function showFullImg(id) {
     });
 }
 
+window.onkeyup = function(e) {
+    if (e.keyCode == 27){
+        $(".fullImgView").hide();
+        $(".fullImgContainer").hide();
+    };
+}
+
 function AddTwo() {
     var elem = document.getElementsByClassName("fullImgLoader")[0];
     var two = new Two({
