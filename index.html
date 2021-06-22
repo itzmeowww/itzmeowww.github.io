@@ -1,138 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- icon -->
 
-    <!-- icon -->
-    
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="pages/images/icon.ico" />
-    <link rel="apple-touch-icon" href="pages/images/icon.ico">
-    <title>Thanasan Kumdee | ItzMeOwww</title>
-</head>
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="icon" href="pages/images/icon.ico" />
+        <link rel="apple-touch-icon" href="pages/images/icon.ico" />
+        <title>Thanasan Kumdee | ItzMeOwww</title>
+    </head>
 
-<body>
-
-    <div class="loader-container">
-        <div class="loader">
-                <span></span>
-                <span></span>
-                <span></span>
-        </div>
-    </div>
-
-
-    <div id="div1" class="name-container">
-
-        <!-- <h1 class="name-container-text">Thanasan Kumdee</h1> -->
-        <div class="name-container-text-group">
-            <span class="name-container-text">T</span>
-            <span class="name-container-text">h</span>
-            <span class="name-container-text">a</span>
-            <span class="name-container-text">n</span>
-            <span class="name-container-text">a</span>
-            <span class="name-container-text">s</span>
-            <span class="name-container-text">a</span>
-            <span class="name-container-text">n</span>
-            <span class="name-container-text">&nbsp;</span>
-            <span class="name-container-text">K</span>
-            <span class="name-container-text">u</span>
-            <span class="name-container-text">m</span>
-            <span class="name-container-text">d</span>
-            <span class="name-container-text">e</span>
-            <span class="name-container-text">e</span>
-
-        </div>
-        <button class="btn btn-down" href="#div2" style="margin-top: 5rem;"><div class="btn-icon">
-            <img src="pics/arrow-down.svg" width="15px">
-        </div></button>
-    </div>
-
-    <div id="div2" class="me-container">
-        <div class="me-left">
-            <div class="my-img-container">
-                <img src="pics/me.webp" class="my-img">
-            </div>
-
-            <div class="me-caption">
-                <a data-scroll href="#contact" class="contact-link"><b>Thansan &nbsp Kumdee</b></a></br>
-                <a href="https://www.facebook.com/kvisofficial/" class="kvis-link">KVIS5</a></br>
-                Learner</br>
-                Coder</br>
-            </div>
-
-        </div>
-        <div class="me-right">
-            
-
-            <a class="gallery-btn" href="/pages/ball"><span class="gallery-btn-text">Random Ball</span></a>
-            <a class="gallery-btn" href="/pages/snake"><span class="gallery-btn-text">First Person Snake</span></a>
-            <a class="gallery-btn" href="/pages/gallery"><span class="gallery-btn-text">Visit my gallery</span></a>
-            <a class="gallery-btn" href="/pages/oreo"><span class="gallery-btn-text">Customize Your OREO!</span></a>
-
-          
+    <body>
+        <div style="width:100vw;height:100vh;display:flex;align-items: center;justify-content: center;flex-direction: column;">
+            <button style="width: 100px;height: 50px;margin: 5px;"><a href="https://thnsnkmd.vercel.app" style="text-decoration: none;color: black;" >Main website<a/></button>
+            <button style="width: 100px;height: 50px;margin: 5px;"><a href="/pages/oreo" style="text-decoration: none;color: black;" >Oreo<a/></button>
+            <button style="width: 100px;height: 50px;margin: 5px;"><a href="/pages/gallery" style="text-decoration: none;color: black;" >Gallery<a/></button>
+            <button style="width: 100px;height: 50px;margin: 5px;"><a href="/pages/snake" style="text-decoration: none;color: black;" >Snake<a/></button>
+            <button style="width: 100px;height: 50px;margin: 5px;"><a href="/pages/ball" style="text-decoration: none;color: black;" >Ball<a/></button>
         </div>
 
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
 
-    </div>
-    
-    <div id="contact" class="social-media">
-        <div class="soc-title">
-            Let's&nbspConnect
-        </div>
-        <div class="social-media-icons">
-            <a class="btn soc-btn" href="https://www.instagram.com/thnsn_kmd/">
-                <div class="btn-icon">
-                    <img class="icon" src="pics/soc-media-icon/ig.svg" width="25px">
-                </div>
-            </a>
-            <a class="btn soc-btn" href="https://www.facebook.com/thanasan.kumdee">
-                <div class="btn-icon">
-                    <img class="icon" src="pics/soc-media-icon/fb.svg" width="30px" >
-                </div>
-            </a>
-            <a class="btn soc-btn" href="https://github.com/itzmeowww">
-                <div class="btn-icon">
-                    <img class="icon" src="pics/soc-media-icon/gh.svg" width="30px" >
-                </div>
-            </a>
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
 
-            <a class="btn soc-btn" href="https://twitter.com/thnsn_kmd">
-                <div class="btn-icon">
-                    <img class="icon" src="pics/soc-media-icon/tt.svg" width="30px" >
-                </div>
-            </a>
-            <a class="btn soc-btn" href="https://www.youtube.com/channel/UCbO2Bb1HHWJAgD3P6lGwYxg">
-                <div class="btn-icon">
-                    <img class="icon" src="pics/soc-media-icon/yt.svg" width="30px" >
-                </div>
-            </a>
-        </div>
+        <!-- Add Firebase products that you want to use -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-performance.js"></script>
 
-    </div>
-
-
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-performance.js"></script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="pages/javascript/firebase.js"></script>
-    <script src="javascript/index.js"></script>
-</body>
-
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="pages/javascript/firebase.js"></script>
+        <script src="javascript/index.js"></script>
+    </body>
 </html>
