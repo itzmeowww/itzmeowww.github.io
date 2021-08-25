@@ -1,8 +1,8 @@
 :root {
-    --bg-1: lightblue;
-    --bg-2: lightblue;
-    --bg-3: lightblue;
-    --bg-4: lightblue;
+  --bg-1: lightblue;
+  --bg-2: lightblue;
+  --bg-3: lightblue;
+  --bg-4: lightblue;
 }
 
 /* Google Font  */
@@ -13,149 +13,149 @@
 
 @import url("pages/css/loader.css");
 @media screen and (min-width: 0px) {
-    .name-container {
-        background-color: var(--bg-4);
-        transition: background-color 0.5s ease;
-    }
-    .name-container-text {
-        font-size: 20px;
-        transition: font-size 0.5s;
-    }
-    .btn {
-        font-size: 15px;
-        width: 20px;
-        height: 20px;
-        background-color: coral;
-        color: snow;
-        transition: width, height, color, background-color 0.5s;
-        transition: font-size 0.5s;
-    }
+  .name-container {
+    background-color: var(--bg-4);
+    transition: background-color 0.5s ease;
+  }
+  .name-container-text {
+    font-size: 20px;
+    transition: font-size 0.5s;
+  }
+  .btn {
+    font-size: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: coral;
+    color: snow;
+    transition: width, height, color, background-color 0.5s;
+    transition: font-size 0.5s;
+  }
 
-    .social-media-icons > .btn {
-        font-size: 25px;
-    }
-    .social-media {
-        font-size: 25px;
-        transition: font-size 1s;
-    }
-    .me-container {
-        height: 200vh;
-        flex-direction: column;
-    }
-    .me-left {
-        width: 100vw;
-    }
-    .me-left:hover {
-        width: 100vw;
-    }
-    .me-right {
-        width: 100vw;
-    }
-    .me-right:hover {
-        width: 100vw;
-    }
+  .social-media-icons > .btn {
+    font-size: 25px;
+  }
+  .social-media {
+    font-size: 25px;
+    transition: font-size 1s;
+  }
+  .me-container {
+    height: 200vh;
+    flex-direction: column;
+  }
+  .me-left {
+    width: 100vw;
+  }
+  .me-left:hover {
+    width: 100vw;
+  }
+  .me-right {
+    width: 100vw;
+  }
+  .me-right:hover {
+    width: 100vw;
+  }
 }
 
 @media screen and (min-width: 440px) {
-    .name-container {
-        background-color: var(--bg-3);
-        transition: background-color 0.5s ease;
-    }
-    .name-container-text {
-        font-size: 25px;
-        transition: font-size 0.5s;
-    }
-    .btn {
-        font-size: 15px;
-        width: 25px;
-        height: 25px;
-        background-color: coral;
-        color: snow;
-        transition: width, height, color, background-color 0.5s;
-        transition: font-size 0.5s;
-    }
-    .social-media {
-        font-size: 20px;
-        transition: font-size 1s;
-    }
+  .name-container {
+    background-color: var(--bg-3);
+    transition: background-color 0.5s ease;
+  }
+  .name-container-text {
+    font-size: 25px;
+    transition: font-size 0.5s;
+  }
+  .btn {
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: coral;
+    color: snow;
+    transition: width, height, color, background-color 0.5s;
+    transition: font-size 0.5s;
+  }
+  .social-media {
+    font-size: 20px;
+    transition: font-size 1s;
+  }
 }
 
 @media screen and (min-width: 680px) {
-    .name-container {
-        background-color: var(--bg-2);
-        transition: background-color 0.5s ease;
-    }
-    .name-container-text {
-        font-size: 50px;
-        transition: font-size 0.5s;
-    }
-    .btn {
-        font-size: 15px;
-        width: 30px;
-        height: 30px;
-        background-color: snow;
-        color: coral;
-        transition: width, height, color, background-color 0.5s;
-        transition: font-size 0.5s;
-    }
-    .social-media-icons > .btn {
-        font-size: 30px;
-    }
-    .social-media {
-        font-size: 20px;
-        transition: font-size 1s;
-    }
-    .me-container {
-        height: 100vh;
-        flex-direction: row;
-    }
-    .me-left {
-        width: 40vw;
-    }
-    .me-left:hover {
-        width: 45vw;
-    }
-    .me-right {
-        width: 60vw;
-    }
-    .me-right:hover {
-        width: 65vw;
-    }
+  .name-container {
+    background-color: var(--bg-2);
+    transition: background-color 0.5s ease;
+  }
+  .name-container-text {
+    font-size: 50px;
+    transition: font-size 0.5s;
+  }
+  .btn {
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: snow;
+    color: coral;
+    transition: width, height, color, background-color 0.5s;
+    transition: font-size 0.5s;
+  }
+  .social-media-icons > .btn {
+    font-size: 30px;
+  }
+  .social-media {
+    font-size: 20px;
+    transition: font-size 1s;
+  }
+  .me-container {
+    height: 100vh;
+    flex-direction: row;
+  }
+  .me-left {
+    width: 40vw;
+  }
+  .me-left:hover {
+    width: 45vw;
+  }
+  .me-right {
+    width: 60vw;
+  }
+  .me-right:hover {
+    width: 65vw;
+  }
 }
 
 @media screen and (min-width: 1100px) {
-    .name-container {
-        background-color: var(--bg-1);
-        transition: background-color 0.5s ease;
-    }
-    .name-container-text {
-        font-size: 100px;
-        transition: font-size 0.5s;
-    }
-    .btn {
-        font-size: 30px;
-        width: 50px;
-        height: 50px;
-        background-color: snow;
-        color: coral;
-        transition: width, height, color, background-color 0.5s;
-        transition: font-size 0.5s;
-    }
-    .social-media {
-        font-size: 25px;
-        transition: font-size 1s;
-    }
+  .name-container {
+    background-color: var(--bg-1);
+    transition: background-color 0.5s ease;
+  }
+  .name-container-text {
+    font-size: 100px;
+    transition: font-size 0.5s;
+  }
+  .btn {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: snow;
+    color: coral;
+    transition: width, height, color, background-color 0.5s;
+    transition: font-size 0.5s;
+  }
+  .social-media {
+    font-size: 25px;
+    transition: font-size 1s;
+  }
 }
 
 .name-container-text {
-    position: relative;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-    cursor: pointer;
+  position: relative;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  cursor: pointer;
 }
 
 .name-container-text-group {
-    margin-top: 35vh;
+  margin-top: 35vh;
 }
 
 /* .name-container-text-group :hover {
@@ -164,379 +164,379 @@
 } */
 
 .name-container-text-animation {
-    animation: text-animation 1s;
+  animation: text-animation 1s;
 }
 
 @keyframes text-animation {
-    0% {
-        color: snow;
-        top: -1rem;
-    }
-    60% {
-        color: coral;
-        top: 0.5ex;
-    }
-    100% {
-        color: black;
-        top: 0rem;
-    }
+  0% {
+    color: snow;
+    top: -1rem;
+  }
+  60% {
+    color: coral;
+    top: 0.5ex;
+  }
+  100% {
+    color: black;
+    top: 0rem;
+  }
 }
 
 /* @media only screen and (min-width: 850px) {} */
 
 .name-container {
-    position: relative;
-    display: inline-block;
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: inline-block;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .fade-in {
-    position: relative;
-    animation: fade-in 2s;
+  position: relative;
+  animation: fade-in 2s;
 }
 
 * {
-    font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
 
 @keyframes fade-in {
-    from {
-        opacity: 0.2;
-        top: -2rem;
-    }
-    to {
-        opacity: 1;
-        top: 0rem;
-    }
+  from {
+    opacity: 0.2;
+    top: -2rem;
+  }
+  to {
+    opacity: 1;
+    top: 0rem;
+  }
 }
 
 body::-webkit-scrollbar {
-    width: 1em;
+  width: 1em;
 }
 
 body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
 
 /* Style buttons */
 
 .btn {
-    /* border-radius: 50%; */
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
+  /* border-radius: 50%; */
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
 }
 
 .btn-icon {
-    display: flex;
-    align-self: center;
-    height: 2rem;
-    justify-content: space-around;
-    margin-top: auto;
-    margin-bottom: auto;
+  display: flex;
+  align-self: center;
+  height: 2rem;
+  justify-content: space-around;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .btn-sha-right-down {
-    box-shadow: 0.5ex 0.5ex rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
+  box-shadow: 0.5ex 0.5ex rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
 }
 
 .btn-sha-left-down {
-    box-shadow: -0.5ex 0.5ex rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
+  box-shadow: -0.5ex 0.5ex rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
 }
 
 .btn-sha-left-top {
-    box-shadow: -0.5ex -0.5ex rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
+  box-shadow: -0.5ex -0.5ex rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
 }
 
 .btn-sha-right-top {
-    box-shadow: 0.5ex -0.5ex rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
+  box-shadow: 0.5ex -0.5ex rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
 }
 
 .btn-no-sha {
-    box-shadow: 0rem 0rem rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s;
+  box-shadow: 0rem 0rem rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s;
 }
 
 .social-media {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    font-family: "Prompt", sans-serif;
-    padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  font-family: "Prompt", sans-serif;
+  padding-bottom: 5px;
 }
 
 .social-media > .social-media-icons > .btn {
-    margin-left: 0.7rem;
-    margin-right: 0.7rem;
-    margin-top: 0vh;
-    background-color: black;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+  margin-top: 0vh;
+  background-color: black;
 }
 
 .social-media > .social-media-icons > .btn > .btn-icon > .icon {
-    margin-top: 0px;
-    transition: margin-top 0.5s;
+  margin-top: 0px;
+  transition: margin-top 0.5s;
 }
 
 .social-media > .social-media-icons > .btn > .btn-icon > .icon:hover {
-    margin-top: -5px;
+  margin-top: -5px;
 }
 
 .social-media > .soc-title {
-    margin: 1.5rem;
-    letter-spacing: 0.3ex;
-    font-family: "Sarabun", sans-serif;
-    color: snow;
-    transition: letter-spacing 1s, color 1s;
-    cursor: pointer;
+  margin: 1.5rem;
+  letter-spacing: 0.3ex;
+  font-family: "Sarabun", sans-serif;
+  color: snow;
+  transition: letter-spacing 1s, color 1s;
+  cursor: pointer;
 }
 
 .social-media > .soc-title:hover {
-    letter-spacing: 0ex;
-    color: palegreen;
-    transition: letter-spacing 1s, color 1s;
+  letter-spacing: 0ex;
+  color: palegreen;
+  transition: letter-spacing 1s, color 1s;
 }
 
 .social-media > .social-media-icons {
-    margin-top: 0vh;
-    margin-bottom: 1rem;
+  margin-top: 0vh;
+  margin-bottom: 1rem;
 }
 
 .social-media-icons {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-self: center;
-    align-items: center;
-    margin-top: auto;
-    margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* Darker background on mouse-over */
 
 .btn:hover .icon {
-    color: black;
-    transition: color 1s;
+  color: black;
+  transition: color 1s;
 }
 
 .btn-down-ani {
-    animation: btn-down-ani 1s;
+  animation: btn-down-ani 1s;
 }
 
 @keyframes btn-down-ani {
-    0% {
-    }
+  0% {
+  }
 }
 
 .me-container {
-    width: 100vw;
-    background-color: rgb(159, 143, 250);
-    display: flex;
-    max-width: 100%;
-    transition: all 0.4s;
+  width: 100vw;
+  background-color: rgb(159, 143, 250);
+  display: flex;
+  max-width: 100%;
+  transition: all 0.4s;
 }
 
 .me-left {
-    height: 100vh;
-    transition: width 1s;
+  height: 100vh;
+  transition: width 1s;
 }
 
 .me-left:hover {
-    transition: width 1s;
+  transition: width 1s;
 }
 
 .my-img-container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10vh;
-    width: 30vh;
-    transform: rotate(0deg);
-    transition: all 2s;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  width: 30vh;
+  transform: rotate(0deg);
+  transition: all 2s;
 }
 
 .my-img {
-    height: 30vh;
-    width: 30vh;
-    border-radius: 50%;
-    transition: transform 2s;
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  transition: transform 2s;
 }
 
 .my-img-container :hover {
-    transform: rotate(360deg);
-    transition: transform 5s;
+  transform: rotate(360deg);
+  transition: transform 5s;
 }
 
 .me-caption {
-    background-color: rgba(255, 250, 250, 0.25);
-    line-height: 1.8rem;
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vh;
-    height: 30vh;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 16px;
-    padding-top: 1rem;
+  background-color: rgba(255, 250, 250, 0.25);
+  line-height: 1.8rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 1rem;
 }
 
 .me-right {
-    height: 100vh;
-    transition: width 1s;
-    background-color: darkslateblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  transition: width 1s;
+  background-color: darkslateblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .me-right:hover {
-    transition: width 1s;
+  transition: width 1s;
 }
 
 .gallery-btn {
-    display: flex;
-    background-color: coral;
-    border-width: 0px;
-    width: 200px;
-    height: 60px;
-    text-align: center;
-    justify-items: center;
-    justify-content: center;
-    font-family: "Sarabun", sans-serif;
-    font-size: 20px;
-    margin: 10px;
-    text-decoration: none;
-    color: snow;
+  display: flex;
+  background-color: coral;
+  border-width: 0px;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  font-family: "Sarabun", sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  text-decoration: none;
+  color: snow;
 }
 
 .gallery-btn-text {
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .gallery-btn:hover {
-    background-color: salmon;
+  background-color: salmon;
 }
 
 .kvis-link {
-    text-decoration: none;
-    color: black;
-    transition: color 1s;
+  text-decoration: none;
+  color: black;
+  transition: color 1s;
 }
 
 .kvis-link:hover {
-    color: snow;
-    transition: color 1s;
+  color: snow;
+  transition: color 1s;
 }
 
 .contact-link {
-    text-decoration: none;
-    color: black;
-    letter-spacing: 0rem;
-    transition: letter-spacing 1s;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0rem;
+  transition: letter-spacing 1s;
 }
 
 .contact-link:hover {
-    letter-spacing: 0.2ex;
-    transition: letter-spacing 1s;
+  letter-spacing: 0.2ex;
+  transition: letter-spacing 1s;
 }
 
 .css-gradient {
-    background: linear-gradient(270deg, #dce35b, #45b649);
-    background-size: 400% 400%;
+  background: linear-gradient(270deg, #dce35b, #45b649);
+  background-size: 400% 400%;
 
-    -webkit-animation: gradient 30s ease infinite;
-    -moz-animation: gradient 30s ease infinite;
-    -o-animation: gradient 30s ease infinite;
-    animation: gradient 30s ease infinite;
+  -webkit-animation: gradient 30s ease infinite;
+  -moz-animation: gradient 30s ease infinite;
+  -o-animation: gradient 30s ease infinite;
+  animation: gradient 30s ease infinite;
 }
 
 @-webkit-keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-o-keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .links {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-decoration: none;
-    color: black;
-    width: 100px;
-    height: 50px;
-    margin: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  color: black;
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .links:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
