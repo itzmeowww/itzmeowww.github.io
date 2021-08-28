@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- icon -->
+
+    <link rel="icon" href="pages/images/icon.ico" />
+    <link rel="apple-touch-icon" href="pages/images/icon.ico" />
+    <title>มี เแ กี่ตัว</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+  </head>
+  <body
+    style="
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    "
+  >
+    <h1>แแแแเเเแแแ</h1>
+    <div
+      class="input-group input-group-sm mb-3"
+      style="width: 300px; max-width: 70%"
+    >
+      <input
+        type="text"
+        class="form-control"
+        aria-label="Small"
+        aria-describedby="inputGroup-sizing-sm"
+        placeholder="พิมพ์มาเลย"
+        id="text"
+      />
+      <div class="input-group-append">
+        <button id="count" class="btn btn-outline-secondary" type="button">
+          นับ
+        </button>
+      </div>
+    </div>
+    <h4 id="aa">แ : 0 ตัว</h4>
+    <h4 id="a">เ : 0 ตัว</h4>
+  </body>
+  <script>
+    $(document).ready(function () {
+      console.log("HI");
+      $("#count").click(function () {
+        var text = $("#text").val();
+        var a = 0;
+        var aa = 0;
+        text.split("").forEach((letter) => {
+          console.log(letter);
+          if (letter == "เ") {
+            a++;
+          } else if (letter == "แ") {
+            aa++;
+          }
+        });
+
+        $("#a").text("เ : " + a.toString() + " ตัว");
+        $("#aa").text("แ : " + aa.toString() + " ตัว");
+      });
+    });
+  </script>
+</html>
