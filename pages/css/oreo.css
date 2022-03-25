@@ -1,48 +1,53 @@
 @import url("font.css");
 @import url("return.css");
 .my-oreo {
-    width: 300px;
-    background-color: lightblue;
+  width: 300px;
+  background-color: #cffafe;
 }
 
 .controller {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .btn {
-    background-color: lightcoral;
-    border: 0px;
-    margin: 5px;
-    padding: 5px;
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
+  background-color: #fca5a5;
+  border: 0px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #f87171;
 }
 
 .my-oreo-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .title {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .text {
-    justify-content: center;
-    word-wrap: break-word;
-    word-break: break-all;
-    text-align: center;
-    width: 80vw;
+  justify-content: center;
+  word-wrap: break-word;
+  word-break: break-all;
+  text-align: center;
+  width: 80vw;
 }
 
 html {
-    background-color: lightblue;
-    font-family: "Open Sans", sans-serif;
+  background-color: #cffafe;
+  font-family: "Open Sans", sans-serif;
 }
